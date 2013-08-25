@@ -3,7 +3,8 @@ require "tweetstream"
 require "time"
 
 # Escolha qual palavra deseja filtrar
-term = 'partiu'
+term1 = '#FaunaUSP'
+term2 = '#FloraUSP'
 
   TweetStream.configure do |config|
     config.consumer_key       = 'SFiHGCeVr6qMGx9pkxvBg'
@@ -14,7 +15,7 @@ term = 'partiu'
   end
 
 p "starting TweetStream.."
-TweetStream::Client.new.track(term) do |status|
+TweetStream::Client.new.track(term1,term2) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
   puts "#{status.text}\n \n"
