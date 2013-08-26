@@ -1,8 +1,12 @@
 #!/usr/bin/env ruby
+# That's an example how to use TweetStream: https://github.com/tweetstream/tweetstream
+# This application filter tweets with specific terms determined below
+# Credits to J. H. Kersul and Adriano Dennanni
+
 require "tweetstream"
 require "time"
 
-# Escolha qual palavra deseja filtrar
+# Terms that will be used as parameters to filter tweets
 term1 = '#FaunaUSP'
 term2 = '#FloraUSP'
 
