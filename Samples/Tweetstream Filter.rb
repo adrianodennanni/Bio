@@ -18,7 +18,7 @@ term2 = '#FloraUSP'
     config.auth_method        = :oauth
   end
 
-p "starting TweetStream.."
+puts "starting TweetStream.."
 TweetStream::Client.new.track(term1,term2) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
