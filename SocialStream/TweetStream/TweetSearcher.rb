@@ -27,6 +27,13 @@ TweetStream.configure do |config|
 end
 
 puts "Initializing Tweet Searcher"
+TweetStream::Client.new.track(term1,term2) do |status|
+  puts "@#{status.user.screen_name}"
+  puts "#{status.user.name}"
+  puts "#{status.text}\n \n"
+end
+
+puts "Initializing Tweet Searcher"
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
