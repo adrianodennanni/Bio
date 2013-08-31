@@ -13,6 +13,10 @@ APP_CONFIG = YAML.load_file("../config.yml")
 # Terms that will be used as parameters to filter tweets
 term1 = APP_CONFIG['TERM_1_TWITTER']
 term2 = APP_CONFIG['TERM_2_TWITTER']
+term3 = APP_CONFIG['TERM_3_TWITTER']
+term4 = APP_CONFIG['TERM_4_TWITTER']
+term5 = APP_CONFIG['TERM_5_TWITTER']
+term6 = APP_CONFIG['TERM_6_TWITTER']
 
 TweetStream.configure do |config|
   config.consumer_key       = APP_CONFIG['CONSUMER_KEY_TWITTER']
@@ -23,7 +27,7 @@ TweetStream.configure do |config|
 end
 
 puts "Initializing Tweet Searcher"
-TweetStream::Client.new.track(term1,term2) do |status|
+TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
   puts "#{status.text}\n \n"
