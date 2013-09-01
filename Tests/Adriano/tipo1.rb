@@ -11,15 +11,15 @@ term1 = '#FaunaUSP'
 term2 = '#FloraUSP'
 
   TweetStream.configure do |config|
-	config.consumer_key	=        'SFiHGCeVr6qMGx9pkxvBg'
-	config.consumer_secret =     'bSu6UDz4TARxGHWqsvCmgJP8JnlJT31IKyaFBJNtcFY'
-	config.oauth_token =         '88300988-HMfsqoDKvp5LfjSYomtKMqtF0mx70P2Nf5wIjVC6f'
-	config.oauth_token_secret =  'qpbUxivfOyAwLBgYGF1p0R6F4K9WFVaPd2mpmscQgU'
-	config.auth_method =         :oauth
+    config.consumer_key       = 'SFiHGCeVr6qMGx9pkxvBg'
+    config.consumer_secret    = 'bSu6UDz4TARxGHWqsvCmgJP8JnlJT31IKyaFBJNtcFY'
+    config.oauth_token        = '88300988-HMfsqoDKvp5LfjSYomtKMqtF0mx70P2Nf5wIjVC6f'
+    config.oauth_token_secret = 'qpbUxivfOyAwLBgYGF1p0R6F4K9WFVaPd2mpmscQgU'
+    config.auth_method        = :oauth
   end
 
 puts "starting TweetStream.."
-TweetStream::Client.new.track(term1,term2) do |status|
+TweetStream::Client.new.track(term1,term2,'#partiu','#gata','#braziliangirl','#vemnimim','#club','#night','#dormi','#swag','#sono','#comer','#tgif','#balada','#girl','#cama','#dance') do |status|
 	puts "Username: @#{status.user.screen_name}"
 	puts "Name: #{status.user.name}"
 
@@ -27,25 +27,22 @@ TweetStream::Client.new.track(term1,term2) do |status|
 		puts "Latitude: #{status.geo.coordinates[0]}"
 		puts "Longitude: #{status.geo.coordinates[1]}"
 	end
-
-	if status.media[0]!=nil
-		puts "PIC: #{status.media[0].media_url}"
-  	else
-   		puts "nao tem PIC!"
- 	end
-
-	if status.urls[0]!=nil
-   		puts "URL: #{status.urls[0].expanded_url}"
-  	else
-			puts "nao tem URL!"
-  	end
-  	i = 0
- 	while status.hashtags[i]!=nil
-		puts "hashtag: #{status.hashtags[i].text}"
-		i = i + 1
-  	end
-
+	i = 0
+  while status.media[i]!=nil
+    puts "PIC #{i+1}: #{status.media[i].media_url}"
+    i = i + 1
+  end
+  i = 0
+  while status.urls[i]!=nil
+    puts "URL #{i+1}: #{status.urls[i].expanded_url}"
+    i = i + 1
+  end
+  i = 0
+  while status.hashtags[i]!=nil
+    puts "hashtag #{i+1}: #{status.hashtags[i].text}"
+    i = i + 1
+  end
 	puts "Text: #{status.text}"
-	puts "Id: #{status.id}\n \n"
+	puts "ID: #{status.id}\n \n"
 
 end
