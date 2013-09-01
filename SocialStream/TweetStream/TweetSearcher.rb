@@ -6,6 +6,7 @@
 require "tweetstream"
 require "time"
 require "yaml"
+require "mysql"
 
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
@@ -17,6 +18,12 @@ term3 = APP_CONFIG['TERM_3_TWITTER']
 term4 = APP_CONFIG['TERM_4_TWITTER']
 term5 = APP_CONFIG['TERM_5_TWITTER']
 term6 = APP_CONFIG['TERM_6_TWITTER']
+host = APP_CONFIG['HOST_MYSQL']
+user = APP_CONFIG['LOGIN_MYSQL']
+pass = APP_CONFIG['PASSWORD_MYSQL']
+database = APP_CONFIG['DATABASE_MYSQL']
+
+#Database requirements
 
 TweetStream.configure do |config|
   config.consumer_key       = APP_CONFIG['CONSUMER_KEY_TWITTER']
@@ -26,17 +33,53 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-puts "Initializing Tweet Searcher"
-TweetStream::Client.new.track(term1,term2) do |status|
-  puts "@#{status.user.screen_name}"
-  puts "#{status.user.name}"
-  puts "#{status.text}\n \n"
-end
+connection = Mysql.new host, user, pass, database
 
 puts "Initializing Tweet Searcher"
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
-  puts "#{status.text}\n \n"
+  if status.geo!=nil
+    puts "Latitude: #{status.geo.coordinates[0]}"
+    puts "Longitude: #{status.geo.coordinates[1]}"
+  end
+  puts "#{status.text}"
+  puts "#{status.user.profile_image_url}"
+  puts "Id: #{status.id}\n \n"
+
+  # If the user already exists update the data
+  if (connection.query("SELECT id_user FROM User WHERE id_user='#{status.user.id}'").num_rows==0)
+    # Saving the user data
+    connection.query("INSERT INTO User(id_user, username, name, profile_image) VALUES('#{status.user.id}', \
+    '#{status.user.screen_name}', '#{status.user.name}', '#{status.user.profile_image_url}')")
+  else
+  # Updating the user data
+    connection.query("UPDATE `bio`.`User` SET `username`='#{status.user.screen_name}', `name`='#{status.user.name}', \
+    `profile_image`='#{status.user.profile_image_url}' WHERE `id_user`='#{status.user.id}'")
+  end
+
+  # Saving tweet with geolocalization
+  if status.geo!=nil
+    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, location_lat, location_long, id_user) VALUES( \
+  '#{status.id}', \
+  '#{status.text}', \
+  '#{status.user.profile_image_url}', \
+  NOW(), \
+  '#{status.geo.coordinates[0]}', \
+  '#{status.geo.coordinates[1]}', \
+  '#{status.user.id}')");
+
+  #Saving tweet without geolocalization
+  else
+    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, location_lat, location_long, id_user) VALUES( \
+  '#{status.id}', \
+  '#{status.text}', \
+  '#{status.user.profile_image_url}', \
+  NOW(), \
+  NULL, \
+  NULL, \
+  '#{status.user.id}')");
+  end
+
 end
 
