@@ -1,1 +1,0 @@
-# This file will make the connection with MySQL Database.
