@@ -7,8 +7,8 @@ require "tweetstream"
 require "time"
 
 # Terms that will be used as parameters to filter tweets
-term1 = '#gata'
-term2 = '#picture'
+term1 = '#FaunaUSP'
+term2 = '#FloraUSP'
 
   TweetStream.configure do |config|
     config.consumer_key       = 'SFiHGCeVr6qMGx9pkxvBg'
@@ -19,18 +19,31 @@ term2 = '#picture'
   end
 
 puts "starting TweetStream.."
-TweetStream::Client.new.track(term1,term2,"#partiu") do |status|
-	puts "@#{status.user.screen_name}"
-	puts "#{status.user.name}"
+TweetStream::Client.new.track(term1,term2,'#partiu','#gata','#braziliangirl','#balada','#vemnimim','#cama','#caminha','#sono','#soninho','#night','#club','#dormi','#dance') do |status|
+	puts "Username: @#{status.user.screen_name}"
+	puts "Name: #{status.user.name}"
 
-	if status.geo==nil
-	else
+	if status.geo!=nil
 		puts "Latitude: #{status.geo.coordinates[0]}"
 		puts "Longitude: #{status.geo.coordinates[1]}"
 	end
 
-	puts "#{status.url.expanded_url}"
-	puts "#{status.text}"
+	if status.media[0]!=nil
+    		puts "PIC: #{status.media[0].media_url}"
+  	else
+   		puts "nao tem PIC!"
+  end
+  if status.urls[0]!=nil
+    puts "URL: #{status.urls[0].expanded_url}"
+  else
+    puts "nao tem URL!"
+  end
+  i = 0
+  while status.hashtags[i]!=nil
+    puts "hashtag: #{status.hashtags[i].text}"
+    i = i + 1
+  end
+	puts "Text: #{status.text}"
 	puts "Id: #{status.id}\n \n"
 
 end
