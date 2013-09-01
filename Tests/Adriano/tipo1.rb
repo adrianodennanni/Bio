@@ -20,8 +20,8 @@ term2 = '#FloraUSP'
 
 puts "starting TweetStream.."
 TweetStream::Client.new.track(term1,term2,'#partiu','#gata','#braziliangirl','#balada','#vemnimim','#cama','#caminha','#sono','#soninho','#night','#club','#dormi','#dance') do |status|
-	puts "@#{status.user.screen_name}"
-	puts "#{status.user.name}"
+	puts "Username: @#{status.user.screen_name}"
+	puts "Name: #{status.user.name}"
 
 	if status.geo!=nil
 		puts "Latitude: #{status.geo.coordinates[0]}"
@@ -37,7 +37,12 @@ TweetStream::Client.new.track(term1,term2,'#partiu','#gata','#braziliangirl','#b
   else
     puts "nao tem URL!"
   end
-	puts "#{status.text}"
+  i = 0
+  while status.hashtags[i]!=nil
+    puts "hashtag: #{status.hashtags[i].text}"
+    i = i + 1
+  end
+	puts "Text: #{status.text}"
 	puts "Id: #{status.id}\n \n"
 
 end
