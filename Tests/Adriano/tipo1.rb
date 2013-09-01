@@ -32,6 +32,7 @@ TweetStream::Client.new.track(term1,term2,'#partiu','#gata','#braziliangirl','#v
 	end
 	
 	#Picture uploaded with the tweet
+	i = 0
 	while status.media[i]!=nil
 		puts "PIC: #{status.media[i].media_url}"
 	end
