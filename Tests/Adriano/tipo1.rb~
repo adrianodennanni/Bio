@@ -19,7 +19,7 @@ term2 = '#picture'
   end
 
 puts "starting TweetStream.."
-TweetStream::Client.new.track(term1,term2,'#partiu') do |status|
+TweetStream::Client.new.track(term1,term2,"#partiu") do |status|
 	puts "@#{status.user.screen_name}"
 	puts "#{status.user.name}"
 
@@ -29,11 +29,7 @@ TweetStream::Client.new.track(term1,term2,'#partiu') do |status|
 		puts "Longitude: #{status.geo.coordinates[1]}"
 	end
 
-
-	puts "#{status.urls.url}"
-
-
-	
+	puts "#{status.url.expanded_url}"
 	puts "#{status.text}"
 	puts "Id: #{status.id}\n \n"
 

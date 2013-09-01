@@ -7,8 +7,8 @@ require "tweetstream"
 require "time"
 
 # Terms that will be used as parameters to filter tweets
-term1 = '#gata'
-term2 = '#picture'
+term1 = '#faunausp'
+term2 = '#brasil'
 
   TweetStream.configure do |config|
     config.consumer_key       = 'SFiHGCeVr6qMGx9pkxvBg'
@@ -19,15 +19,16 @@ term2 = '#picture'
   end
 
 puts "starting TweetStream.."
-TweetStream::Client.new.track(term1,term2,'#partiu') do |status|
+TweetStream::Client.new.track(term1,term2) do |status|
 	puts "@#{status.user.screen_name}"
 	puts "#{status.user.name}"
 
-	if status.geo==nil
-	else
+	if status.geo!=nil
 		puts "Latitude: #{status.geo.coordinates[0]}"
 		puts "Longitude: #{status.geo.coordinates[1]}"
 	end
+	
+	puts "#{status.media[0].media_url}"
 
 	puts "#{status.text}"
 	puts "Id: #{status.id}\n \n"
