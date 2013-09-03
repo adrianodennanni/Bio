@@ -97,7 +97,7 @@ body > div {
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 320px;
+    width: 341px;
     height: 50px;	
     background: #444;
     color: white;
@@ -109,7 +109,7 @@ body > div {
 	right: 0px;
 	bottom: 0px;
 	padding: 0 20px;
-	width: 279px;
+	width: 300px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;

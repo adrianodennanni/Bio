@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Twitter Showdown</title>
+    <title>#Bio</title>
     <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -14,17 +14,26 @@
     <script src="ext/underscore.min.js"></script>
     <script src="ext/mapbox.share.js"></script>
     <script src="tweetRace.js"></script>
+    <script>
+		!function(d,s,id){
+			var js,fjs=d.getElementsByTagName(s)[0];
+			if(!d.getElementById(id)){
+				js=d.createElement(s);
+				js.id=id;js.src="widgets.js";
+				fjs.parentNode.insertBefore(js,fjs);
+			}
+		}
+		(document,"script","twitter-wjs");
+	</script>
 </head>
+
 <body>
 
 	<div id="header">
         <h1>#Bio</h1>
     </div>
     <div id="content">
-       <a class="twitter-timeline" href="https://twitter.com/search?q=%23faunausp+OR+%23florausp" data-widget-id="374704186891313154">Tweets sobre "#faunausp OR #florausp"</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-        </div>
+		<a id="twitter-widget-0" class="twitter-timeline" href="https://twitter.com/search?q=%23faunausp+OR+%23florausp&mode=realtime" data-tweet-limit="10" data-widget-id="374704186891313154" data-chrome="nofooter transparent"></a>
     </div>
 
     <div id="map" class="map"></div>
@@ -42,8 +51,8 @@
 
         mapbox.auto('map', 'examples.map-dg7cqh4z', function(map, tiledata) {
             map.centerzoom({
-                lat: -40,
-                lon: -30
+                lat: -23.5,
+                lon: -46.5
             }, 6);
 
             map.setZoomRange(2, 17);
