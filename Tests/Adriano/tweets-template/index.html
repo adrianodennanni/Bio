@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Twitter Showdown</title>
+    <link rel="stylesheet" href="http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/mapbox.share.css" type="text/css" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.3/mapbox.uncompressed.js'></script>
+    <script src="ext/jquery.min.js"></script>
+    <script src="ext/underscore.min.js"></script>
+    <script src="ext/mapbox.share.js"></script>
+    <script src="tweetRace.js"></script>
+</head>
+<body>
+
+	<div id="header">
+        <h1>#Bio</h1>
+    </div>
+    <div id="content">
+       <a class="twitter-timeline" href="https://twitter.com/search?q=%23faunausp+OR+%23florausp" data-widget-id="374704186891313154">Tweets sobre "#faunausp OR #florausp"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        </div>
+    </div>
+
+    <div id="map" class="map"></div>
+        
+    
+    <!-- Site configuration -->
+    <script type="text/javascript">
+    
+        // Specify the tweets and location / radius to search
+        var tweets = [
+            'work',             // First term
+            'play',             // Second term
+            '39,-98,1500mi'     // search location and radius (lat,lon,radius)
+        ];
+
+        mapbox.auto('map', 'examples.map-dg7cqh4z', function(map, tiledata) {
+            map.centerzoom({
+                lat: -40,
+                lon: -30
+            }, 6);
+
+            map.setZoomRange(2, 17);
+            tweetRace.start(map);
+
+            // Add share control
+            mapbox.share().map(map).add();
+        });
+        
+    </script>
+</body>
+</html>

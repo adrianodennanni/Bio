@@ -48,12 +48,14 @@ TweetStream::Client.new.track(term1,term2,'#partiu','#gata','#braziliangirl','#v
 	#Hashtags used in the tweet
 	i = 0
 	while status.hashtags[i]!=nil
-		puts "hashtag ##{i+1}: #{status.hashtags[i].text}"
+		puts "hashtag #{i+1}: ##{status.hashtags[i].text}"
 		i = i + 1
 	end
 	
+	puts "Place: #{status.place}"
 	#Text/tweet ID
 	puts "Text: #{status.text}"
 	puts "ID: #{status.id}\n \n"
+	
 
 end
