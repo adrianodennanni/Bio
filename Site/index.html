@@ -42,17 +42,24 @@
     
     <script type="text/javascript">
       function initialize() {
-		var myLatlng = new google.maps.LatLng(-5.363882,-30);
+		var myLatlng = new google.maps.LatLng(-23.58536416,-46.60314867);
         var mapOptions = {
           center: new google.maps.LatLng(-4.397,-30),
           zoom: 4,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
+        var contentString = '<iframe src="tweet.html" height="440"></iframe>';
+        var infowindow = new google.maps.InfoWindow({
+			content: contentString
+		});
         var marker = new google.maps.Marker({
 			position: myLatlng,
 			map: map,
 			title: 'Hello World!'	
+		});
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map,marker);
 		});
     }
     </script>
@@ -72,14 +79,20 @@
 			</a>
         <div id="about">
             <h2>Sobre #Bio</h2>
-            <p>Ajude-nos a construir o maior banco de dados de informações sobre biodiversidade extraídas de redes sociais do mundo. Para isso, compartilhe suas fotos de espécies animais e vegetais com uma pequena legenda e localizção geográfica ativada com as hashtags</p>
+            <p>Ajude-nos a construir o maior banco de dados de informações sobre biodiversidade extraídas de redes sociais do mundo. Para isso, compartilhe suas fotos de espécies animais e vegetais com uma pequena legenda e localizção geográfica ativada com as seguintes hashtags:</p>
+			<h1>#BioUSP</h1>
 			<h1>#FaunaUSP</h1>
 			<h1>#FloraUSP</h1>
+			<h1>#BioBR</h1>
+			<h1>#FaunaBR</h1>
+			<h1>#FloraBR</h1>
+			<h1>#WorldBio</h1>
+			
         </div>
     </div>
+    
 <div id="map_canvas"></div>
         
 
 </body>
 </html>
-
