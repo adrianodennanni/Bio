@@ -5,7 +5,7 @@
     <title>#Bio</title>
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 	
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD2wZsDQ33Wfv0k5jqpX_yeC3Xfm3gUFPo&sensor=true"></script>
     <script src="ext/jquery.min.js"></script>
@@ -17,7 +17,7 @@
 			if(!d.getElementById(id)){
 				js=d.createElement(s);
 				js.id=id;
-				js.src=p+"://platform.twitter.com/widgets.js";
+				js.src=p+"ext/widgets.js";
 				fjs.parentNode.insertBefore(js,fjs);
 			}
 		}
@@ -27,22 +27,22 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
     <style type="text/css">
-		#map_canvas { 
-			position: absolute;
-			height: 100%;
-			right: 320px;
-			left: 0px;
-			z-index: 0;
-		}
+
+      #map_canvas { 
+		   position: absolute;
+		height: 100%;
+		right: 320px;
+		left: 0px;
+		z-index: 0;
+    }
     </style>
 
     <script type="text/javascript"
-		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD2wZsDQ33Wfv0k5jqpX_yeC3Xfm3gUFPo&sensor=true">
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD2wZsDQ33Wfv0k5jqpX_yeC3Xfm3gUFPo&sensor=true">
     </script>
     
     <script type="text/javascript">
       function initialize() {
-		var myLatlng = new google.maps.LatLng(-5.363882,-30);
         var mapOptions = {
           center: new google.maps.LatLng(-4.397,-30),
           zoom: 4,
@@ -50,14 +50,7 @@
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
-        var marker = new google.maps.Marker({
-			position: myLatlng,
-			map: map,
-			title: 'Hello World!'
-			
-		});
-		google.maps.MarkergetAnimation();
-    }
+      }
     </script>
 </head>
 
@@ -69,9 +62,11 @@
     </div>
     <div id="content">
         	<a class="twitter-timeline"
-			   href="https://twitter.com/search?q=%23FaunaUSP+OR+%23FloraUSP"
-			   data-widget-id="375366324798513152"
-			   data-chrome="nofooter transparent noscrollbar">
+			   href="https://twitter.com/search?q=%23FaunaUSP+OR+%23FloraUSP&mode=realtime"
+			   data-widget-id="374704186891313154"
+			   data-chrome="nofooter transparent noscrollbar"
+			   height="">
+			   </a>
 			</a>
         <div id="about">
             <h2>Sobre #Bio</h2>
