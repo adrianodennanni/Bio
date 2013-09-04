@@ -48,15 +48,12 @@
           zoom: 4,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
+        var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
         var marker = new google.maps.Marker({
 			position: myLatlng,
 			map: map,
-			title: 'Hello World!'
-			
+			title: 'Hello World!'	
 		});
-		google.maps.MarkergetAnimation();
     }
     </script>
 </head>
@@ -69,7 +66,7 @@
     </div>
     <div id="content">
         	<a class="twitter-timeline"
-			   href="https://twitter.com/search?q=%23FaunaUSP+OR+%23FloraUSP"
+			   href="https://twitter.com/search?q=%23FaunaUSP%20OR%20%23FloraUSP&mode=realtime"
 			   data-widget-id="375366324798513152"
 			   data-chrome="nofooter transparent noscrollbar">
 			</a>
