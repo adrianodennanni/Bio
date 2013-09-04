@@ -60,7 +60,7 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
 
   # Saving tweet with geolocalization
   if status.geo!=nil
-    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, location_lat, location_long, id_user) VALUES( \
+    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, id_user) VALUES( \
   '#{status.id}', \
   '#{status.text}', \
   '#{status.user.profile_image_url}', \
@@ -71,7 +71,7 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
 
   #Saving tweet without geolocalization
   else
-    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, location_lat, location_long, id_user) VALUES( \
+    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, id_user) VALUES( \
   '#{status.id}', \
   '#{status.text}', \
   '#{status.user.profile_image_url}', \
