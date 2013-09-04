@@ -18,6 +18,7 @@ term3 = APP_CONFIG['TERM_3_TWITTER']
 term4 = APP_CONFIG['TERM_4_TWITTER']
 term5 = APP_CONFIG['TERM_5_TWITTER']
 term6 = APP_CONFIG['TERM_6_TWITTER']
+term7 = APP_CONFIG['TERM_7_TWITTER']
 host = APP_CONFIG['HOST_MYSQL']
 user = APP_CONFIG['LOGIN_MYSQL']
 pass = APP_CONFIG['PASSWORD_MYSQL']
@@ -36,7 +37,7 @@ end
 connection = Mysql.new host, user, pass, database
 
 puts "Initializing Tweet Searcher"
-TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
+TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7 ) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
   if status.geo!=nil
@@ -57,29 +58,29 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6) do |status|
     connection.query("UPDATE `bio`.`User` SET `username`='#{status.user.screen_name}', `name`='#{status.user.name}', \
     `profile_image`='#{status.user.profile_image_url}' WHERE `id_user`='#{status.user.id}'")
   end
-
-  # Saving tweet with geolocalization
-  if status.geo!=nil
-    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, id_user) VALUES( \
-  '#{status.id}', \
-  '#{status.text}', \
-  '#{status.user.profile_image_url}', \
-  NOW(), \
-  '#{status.geo.coordinates[0]}', \
-  '#{status.geo.coordinates[1]}', \
-  '#{status.user.id}')");
-
-  #Saving tweet without geolocalization
-  else
-    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, id_user) VALUES( \
-  '#{status.id}', \
-  '#{status.text}', \
-  '#{status.user.profile_image_url}', \
-  NOW(), \
-  NULL, \
-  NULL, \
-  '#{status.user.id}')");
+  
+  mediaurl = nil
+  latitude = nil
+  longitude = nil
+  
+  if (status.media[0]!=nil)
+    mediaurl = status.media[0].media_url
   end
+  if status.geo!=nil
+    latitude = status.geo.coordinates[0]
+    longitude = status.geo.coordinates[1]
+  end
+  
+  
+  # Saving tweet
+    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, id_user) VALUES( \
+  '#{status.id}', \
+  '#{status.text}', \
+  '#{mediaurl}', \
+  NOW(), \
+  '#{latitude}', \
+  '#{longitude}', \
+  '#{status.user.id}')");
 
 end
 
