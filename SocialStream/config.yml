@@ -14,7 +14,7 @@ PK_USER_TABLE: 'id_user' # Primary Key row
 
 # Table Tweet
 # id_tweet, text, img_url, date_tweet, location_lat, location_long, id_user
-TWEET_TABLE_CREATE: 'id_tweet BIGINT NOT NULL, text VARCHAR(300), img_url VARCHAR(300), date_tweet DATETIME NOT NULL, location_lat FLOAT, location_long FLOAT, id_user BIGINT NOT NULL'
+TWEET_TABLE_CREATE: 'id_tweet BIGINT NOT NULL, text VARCHAR(300), img_url VARCHAR(300), date_tweet DATETIME NOT NULL, latitude FLOAT, longitude FLOAT, id_user BIGINT NOT NULL'
 PK_TWEET_TABLE: 'id_tweet'
 FK_TWEET_TABLE: 'id_user' #Set the foreign key of this table that will reference the Primary Key of User Table
 
