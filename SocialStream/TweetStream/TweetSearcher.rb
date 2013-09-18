@@ -45,8 +45,8 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
     puts "Longitude: #{status.geo.coordinates[1]}"
   end
   puts "#{status.text}"
-  puts "Profile URL: #{status.user.profile_image_url}"
-  puts "User ID: #{status.id}"
+  puts "#{status.user.profile_image_url}"
+  puts "Id: #{status.id}\n \n"
 
   # If the user already exists update the data
   if (connection.query("SELECT id_user FROM User WHERE id_user='#{status.user.id}'").num_rows==0)
@@ -68,19 +68,14 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   urls = ""
 
   if (status.media[0]!=nil)
-<<<<<<< HEAD
-    mediaurl = status.media[0].media_url
-    puts "Image Link: #{status.media[0].media_url}"
-=======
   mediaurl = status.media[0].media_url
->>>>>>> 88bd16fd0598129d9b544b72131895b7aa2de0d4
   end
 
   if status.geo!=nil
   latitude = status.geo.coordinates[0]
   longitude = status.geo.coordinates[1]
   end
-  
+
   i=0
   while status.urls[i]!=nil
     if (urls == "")
@@ -90,6 +85,8 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
     end
     i = i + 1
   end
+
+  puts urls
 
   # Saving tweet
   connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, urls, id_user) VALUES( \
@@ -101,7 +98,5 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   '#{longitude}', \
   '#{urls}', \
   '#{status.user.id}')");
-  
-  puts "\n \n"
-end
 
+end
