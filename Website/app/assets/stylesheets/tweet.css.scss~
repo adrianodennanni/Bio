@@ -1,0 +1,74 @@
+// Place all the styles related to the Tweet controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url(http://fonts.googleapis.com/css?family=Telex);
+
+body,
+input,
+textarea {
+    font: 16px/24px 'Telex', sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    }
+
+pre,
+code { font:normal 12px/20px monospace; }
+    
+h1, h2 {
+    font: .75em/1em 'Telex', serif;
+    text-align: center;
+    }
+
+a {
+    color:#369;
+    text-decoration:none;
+    }
+
+/* Layout */
+
+h1,h2 {
+
+    text-align: center;
+    }
+
+p {
+    margin-bottom: 20px;
+    text-align: center;
+    }
+
+#content {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    padding: 0 20px;
+    width: 279px;
+    background: rgb(255,255,255); /* old IE */
+    background: rgba(255,255,255,.9);
+    border-left: 1px solid #ccc;
+    overflow-x: auto;
+    overflow-y: scroll;
+    z-index: 2;
+    }
+
+#header {
+    font: 36px 'Telex';
+vertical-align: middle;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 320px;
+    height: 50px;	
+    background: #444;
+    color: white;
+    }
+
+#footer {
+    position: absolute;
+    bottom: 0px;
+    right: 320px;
+    width: 320px;
+    height: 50px;
+    }

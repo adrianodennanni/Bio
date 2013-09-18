@@ -44,12 +44,13 @@
       function initialize() {
 		var myLatlng = new google.maps.LatLng(-23.58536416,-46.60314867);
         var mapOptions = {
-          center: new google.maps.LatLng(-4.397,-30),
-          zoom: 4,
+          center: new google.maps.LatLng(-23.58536416,-46.60314867),
+          zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
         var contentString = '<iframe src="tweet.html" height="440"></iframe>';
+
         var infowindow = new google.maps.InfoWindow({
 			content: contentString
 		});

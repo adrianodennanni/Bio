@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 0) do
 
   create_table "Tweet", :primary_key => "id_tweet", :force => true do |t|
-    t.string   "text",       :limit => 300
-    t.string   "img_url",    :limit => 300
-    t.datetime "date_tweet",                :null => false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "id_user",    :limit => 8,   :null => false
+    t.string   "text",          :limit => 300
+    t.string   "img_url",       :limit => 300
+    t.datetime "date_tweet",                   :null => false
+    t.float    "location_lat"
+    t.float    "location_long"
+    t.integer  "id_user",       :limit => 8,   :null => false
   end
 
   add_index "Tweet", ["id_user"], :name => "FK_id_user"

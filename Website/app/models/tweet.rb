@@ -2,13 +2,16 @@ class Tweet < ActiveRecord::Base
   self.table_name = 'Tweet'
   
 
+
   acts_as_gmappable
       def gmaps4rails_address
         self.latitude
         self.longitude
       end
       def gmaps4rails_infowindow
-         "<h4>#{self.id_user}</h4>" << "<h4>#{self.text}</h4>"
+      "<h1>#{self.text}</h1>" << "<img src=\"#{self.img_url}\" height=\"300\">"
+
+
       end
  
 

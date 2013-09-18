@@ -51,32 +51,40 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   # If the user already exists update the data
   if (connection.query("SELECT id_user FROM User WHERE id_user='#{status.user.id}'").num_rows==0)
     # Saving the user data
-    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio) VALUES('#{status.user.id}', \
-    '#{status.user.screen_name}', '#{status.user.name}', '#{status.user.profile_image_url}', '#{status.user.description}')")
+    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, num_followers, num_following, num_tweets, profile_created_at, location, website) VALUES('#{status.user.id}', \
+    '#{status.user.screen_name}', '#{status.user.name}', '#{status.user.profile_image_url}', '#{status.user.description}', '#{status.user.followers_count}', '#{status.user.friends_count}', '#{status.user.statuses_count}', \
+    '#{status.user.created_at}', '#{status.user.location}', '#{status.user.url}')")
   else
-    # Updating the user data
+  # Updating the user data
     connection.query("UPDATE `bio`.`User` SET `username`='#{status.user.screen_name}', `name`='#{status.user.name}', \
-    `profile_image`='#{status.user.profile_image_url}', `profile_bio`='#{status.user.description}' WHERE `id_user`='#{status.user.id}'")
+    `profile_image`='#{status.user.profile_image_url}', `profile_bio`='#{status.user.description}', `num_followers`='#{status.user.followers_count}', \
+    `num_following`='#{status.user.friends_count}', `num_tweets`='#{status.user.statuses_count}', `profile_created_at`='#{status.user.created_at}', \
+    `location`='#{status.user.location}', `website`='#{status.user.url}' WHERE `id_user`='#{status.user.id}'")
   end
 
   mediaurl = nil
-  latitude = nil
-  longitude = nil
+  latitude = 0
+  longitude = 0
   urls = ""
 
   if (status.media[0]!=nil)
+<<<<<<< HEAD
     mediaurl = status.media[0].media_url
     puts "Image Link: #{status.media[0].media_url}"
+=======
+  mediaurl = status.media[0].media_url
+>>>>>>> 88bd16fd0598129d9b544b72131895b7aa2de0d4
   end
+
   if status.geo!=nil
-    latitude = status.geo.coordinates[0]
-    longitude = status.geo.coordinates[1]
+  latitude = status.geo.coordinates[0]
+  longitude = status.geo.coordinates[1]
   end
   
   i=0
   while status.urls[i]!=nil
     if (urls == "")
-      urls = status.urls[i].expanded_url
+    urls = status.urls[i].expanded_url
     else
       urls = urls + " , " + status.urls[i].expanded_url
     end

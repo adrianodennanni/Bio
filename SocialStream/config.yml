@@ -8,7 +8,7 @@ HOST_MYSQL: 'localhost'
 ##### Database Tables #####
 # Table User
 # id_user, username, name, profile_image
-USER_TABLE_CREATE: 'id_user BIGINT NOT NULL, username VARCHAR(30) NOT NULL, name VARCHAR(50) NOT NULL, profile_image VARCHAR(200), profile_bio VARCHAR(300)'
+USER_TABLE_CREATE: 'id_user BIGINT NOT NULL, username VARCHAR(30) NOT NULL, name VARCHAR(50) NOT NULL, profile_image VARCHAR(200), profile_bio VARCHAR(300), num_followers INT, num_following INT, num_tweets INT, profile_created_at VARCHAR(100), location VARCHAR(200), website VARCHAR(500)'
 PK_USER_TABLE: 'id_user' # Primary Key row
 
 # Table Tweet
