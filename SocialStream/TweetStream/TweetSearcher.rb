@@ -38,37 +38,51 @@ connection = Mysql.new host, user, pass, database
 
 puts "Initializing Tweet Searcher"
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
-  puts "@#{status.user.screen_name}"
-  puts "#{status.user.name}"
-  if status.geo!=nil
-    puts "Latitude: #{status.geo.coordinates[0]}"
-    puts "Longitude: #{status.geo.coordinates[1]}"
-  end
-  puts "#{status.text}"
-  puts "#{status.user.profile_image_url}"
-  puts "Id: #{status.id}\n \n"
+  ######## USER ########
 
+  # Direct variables
+  id_user = status.user.id
+  username = status.user.screen_name
+  name = status.user.name
+  profile_image = status.user.profile_image_url
+  profile_bio = status.user.description
+  num_followers = status.user.followers_count
+  num_following = status.user.friends_count
+  num_tweets = status.user.statuses_count
+  profile_created_at = status.user.created_at
+  location = status.user.location
+  website = status.user.url
+  
+  # Saving User
   # If the user already exists update the data
-  if (connection.query("SELECT id_user FROM User WHERE id_user='#{status.user.id}'").num_rows==0)
+  if (connection.query("SELECT id_user FROM User WHERE id_user='#{id_user}'").num_rows==0)
     # Saving the user data
-    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, num_followers, num_following, num_tweets, profile_created_at, location, website) VALUES('#{status.user.id}', \
-    '#{status.user.screen_name}', '#{status.user.name}', '#{status.user.profile_image_url}', '#{status.user.description}', '#{status.user.followers_count}', '#{status.user.friends_count}', '#{status.user.statuses_count}', \
-    '#{status.user.created_at}', '#{status.user.location}', '#{status.user.url}')")
+    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, \
+    num_followers, num_following, num_tweets, profile_created_at, location, website) VALUES('#{id_user}', \
+    '#{username}', '#{name}', '#{profile_image}', '#{profile_bio}', \
+    '#{num_followers}', '#{num_following}', '#{num_tweets}', \
+    '#{profile_created_at}', '#{location}', '#{website}')")
   else
   # Updating the user data
-    connection.query("UPDATE `bio`.`User` SET `username`='#{status.user.screen_name}', `name`='#{status.user.name}', \
-    `profile_image`='#{status.user.profile_image_url}', `profile_bio`='#{status.user.description}', `num_followers`='#{status.user.followers_count}', \
-    `num_following`='#{status.user.friends_count}', `num_tweets`='#{status.user.statuses_count}', `profile_created_at`='#{status.user.created_at}', \
-    `location`='#{status.user.location}', `website`='#{status.user.url}' WHERE `id_user`='#{status.user.id}'")
+    connection.query("UPDATE `bio`.`User` SET `username`='#{username}', `name`='#{name}', \
+    `profile_image`='#{profile_image}', `profile_bio`='#{profile_bio}', `num_followers`='#{num_followers}', \
+    `num_following`='#{num_following}', `num_tweets`='#{num_tweets}', `profile_created_at`='#{profile_created_at}', \
+    `location`='#{location}', `website`='#{website}' WHERE `id_user`='#{id_user}'")
   end
 
-  mediaurl = nil
+  ######## TWEET ########
+  # Direct variables
+  id_tweet = status.id
+  text = status.text
+
+  # Variables that need to be initialized and can't be null
+  img_url = ""
   latitude = 0
   longitude = 0
   urls = ""
 
   if (status.media[0]!=nil)
-  mediaurl = status.media[0].media_url
+  img_url = status.media[0].media_url
   end
 
   if status.geo!=nil
@@ -86,17 +100,37 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
     i = i + 1
   end
 
-  puts urls
-
   # Saving tweet
   connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, urls, id_user) VALUES( \
-  '#{status.id}', \
-  '#{status.text}', \
-  '#{mediaurl}', \
+  '#{id_tweet}', \
+  '#{text}', \
+  '#{img_url}', \
   NOW(), \
   '#{latitude}', \
   '#{longitude}', \
   '#{urls}', \
-  '#{status.user.id}')");
+  '#{id_user}')");
+  
+  ### Printing Data ###
+  puts "### USER ###"
+  puts "ID User: #{id_user}"
+  puts "Username: #{username}"
+  puts "Name: #{name}"
+  puts "Profile Image: #{profile_image}"
+  puts "Profile Bio: #{profile_bio}"
+  puts "Num Followers: #{num_followers}"
+  puts "Num Following: #{num_following}"
+  puts "Num Tweets: #{num_tweets}"
+  puts "Date Profile Created: #{profile_created_at}"
+  puts "Location: #{location}"
+  puts "Website: #{website}"
+  puts "### TWEET ###"
+  puts "ID Tweet: #{id_tweet}"
+  puts "Text: #{text}"
+  puts "Image URL: #{img_url}"
+  puts "Latitude: #{latitude}"
+  puts "Longitude: #{longitude}"
+  puts "Urls: #{urls}"
+  puts "\n \n"
 
 end
