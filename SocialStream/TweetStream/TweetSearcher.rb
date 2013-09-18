@@ -37,7 +37,7 @@ end
 connection = Mysql.new host, user, pass, database
 
 puts "Initializing Tweet Searcher"
-TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7 ) do |status|
+TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
   puts "@#{status.user.screen_name}"
   puts "#{status.user.name}"
   if status.geo!=nil
@@ -51,18 +51,19 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7 ) do |s
   # If the user already exists update the data
   if (connection.query("SELECT id_user FROM User WHERE id_user='#{status.user.id}'").num_rows==0)
     # Saving the user data
-    connection.query("INSERT INTO User(id_user, username, name, profile_image) VALUES('#{status.user.id}', \
-    '#{status.user.screen_name}', '#{status.user.name}', '#{status.user.profile_image_url}')")
+    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio) VALUES('#{status.user.id}', \
+    '#{status.user.screen_name}', '#{status.user.name}', '#{status.user.profile_image_url}', '#{status.user.description}')")
   else
-  # Updating the user data
+    # Updating the user data
     connection.query("UPDATE `bio`.`User` SET `username`='#{status.user.screen_name}', `name`='#{status.user.name}', \
-    `profile_image`='#{status.user.profile_image_url}' WHERE `id_user`='#{status.user.id}'")
+    `profile_image`='#{status.user.profile_image_url}', `profile_bio`='#{status.user.description}' WHERE `id_user`='#{status.user.id}'")
   end
-  
+
   mediaurl = nil
   latitude = nil
   longitude = nil
-  
+  urls = ""
+
   if (status.media[0]!=nil)
     mediaurl = status.media[0].media_url
   end
@@ -70,16 +71,28 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7 ) do |s
     latitude = status.geo.coordinates[0]
     longitude = status.geo.coordinates[1]
   end
-  
-  
+
+  i=0
+  while status.urls[i]!=nil
+    if (urls == "")
+      urls = status.urls[i].expanded_url
+    else
+      urls = urls + " , " + status.urls[i].expanded_url
+    end
+    i = i + 1
+  end
+
+  puts urls
+
   # Saving tweet
-    connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, id_user) VALUES( \
+  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, urls, id_user) VALUES( \
   '#{status.id}', \
   '#{status.text}', \
   '#{mediaurl}', \
   NOW(), \
   '#{latitude}', \
   '#{longitude}', \
+  '#{urls}', \
   '#{status.user.id}')");
 
 end

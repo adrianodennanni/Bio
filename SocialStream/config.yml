@@ -6,15 +6,14 @@ DATABASE_MYSQL: 'bio'
 HOST_MYSQL: 'localhost'
 
 ##### Database Tables #####
-
 # Table User
 # id_user, username, name, profile_image
-USER_TABLE_CREATE: 'id_user BIGINT NOT NULL, username VARCHAR(30) NOT NULL, name VARCHAR(50) NOT NULL, profile_image VARCHAR(200)'
+USER_TABLE_CREATE: 'id_user BIGINT NOT NULL, username VARCHAR(30) NOT NULL, name VARCHAR(50) NOT NULL, profile_image VARCHAR(200), profile_bio VARCHAR(300)'
 PK_USER_TABLE: 'id_user' # Primary Key row
 
 # Table Tweet
 # id_tweet, text, img_url, date_tweet, location_lat, location_long, id_user
-TWEET_TABLE_CREATE: 'id_tweet BIGINT NOT NULL, text VARCHAR(300), img_url VARCHAR(300), date_tweet DATETIME NOT NULL, latitude FLOAT, longitude FLOAT, id_user BIGINT NOT NULL'
+TWEET_TABLE_CREATE: 'id_tweet BIGINT NOT NULL, text VARCHAR(300), img_url VARCHAR(300), date_tweet DATETIME NOT NULL, latitude FLOAT, longitude FLOAT, urls VARCHAR(1000), id_user BIGINT NOT NULL'
 PK_TWEET_TABLE: 'id_tweet'
 FK_TWEET_TABLE: 'id_user' #Set the foreign key of this table that will reference the Primary Key of User Table
 
@@ -31,4 +30,4 @@ TERM_3_TWITTER: '#BioUSP'
 TERM_4_TWITTER: '#FaunaBR'
 TERM_5_TWITTER: '#FloraBR'
 TERM_6_TWITTER: '#BioBR'
-TERM_7_TWITTER: '#WorldBio'
+TERM_7_TWITTER: '#partiu'
