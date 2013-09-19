@@ -55,7 +55,8 @@ p {
 
 #header {
     font: 36px 'Telex';
-vertical-align: middle;
+    vertical-align: middle;
+    display: table-cell;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -67,8 +68,10 @@ vertical-align: middle;
 
 #footer {
     position: absolute;
+    text-align: justify;
+    vertical-align: text-top;
     bottom: 0px;
     right: 320px;
-    width: 320px;
+    left: 0px;
     height: 50px;
     }
