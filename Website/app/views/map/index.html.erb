@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<!--Twitter-->
 		<script>
 			!function(d,s,id){
 				var js,fjs=d.getElementsByTagName(s)[0],
@@ -14,8 +15,28 @@
 			(document,"script","twitter-wjs");
 		</script>
 		
-		<!--Fancy Box-->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<!--FancyBox-->
+		<script>
+			$("#iframe").fancybox({
+			'width'         : '60%',
+			'height'        : '90%',
+			'autoScale'     : false,
+			'transitionIn'  : 'none',
+			'transitionOut' : 'none',
+			'type'          : 'iframe'
+		});
+		</script>
+		
+		<!--Facebook-->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=362799490517215";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 	</head>
 
 	<body>
@@ -32,18 +53,9 @@
 		</div>
 
 		<div id="footer">
-			<!--
-			<a href="#">Sobre</a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=FaunaUSP" class="twitter-hashtag-button" data-lang="pt" data-size="large"></a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=FloraUSP" class="twitter-hashtag-button" data-lang="pt" data-size="large"></a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=BioUSP" class="twitter-hashtag-button" data-lang="pt" data-size="large"></a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=FaunaBR" class="twitter-hashtag-button" data-lang="pt" data-size="large"></a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=FloraBR" class="twitter-hashtag-button" data-lang="pt" data-size="large"></a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=BioBR" class="twitter-hashtag-button" data-lang="pt" data-size="large"></a>
-			<a href="https://twitter.com/intent/tweet?button_hashtag=WorldBio" class="twitter-hashtag-button" data-lang="pt" data-size="large"></
-			-->
-			<a id="iframe" class="fancybox" rel="group" href="index.html" title="Sobre">Sobre</a>
-
+			<a id="iframe" class="fancybox" rel="group" href="about.html" title="Sobre">Sobre</a>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-text=" 	" data-lang="pt" data-size="small"></a>
+			<div class="fb-like" data-href="http://www.biocomp.org.br/biobr" data-width="200" data-layout="button_count" data-show-faces="false" data-send="false"></div>
 		</div>
 
 		<%= gmaps4rails(@json) %>
