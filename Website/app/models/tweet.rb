@@ -1,6 +1,7 @@
 class Tweet < ActiveRecord::Base
   self.table_name = 'Tweet'
   
+  
 
 
   acts_as_gmappable
@@ -9,9 +10,8 @@ class Tweet < ActiveRecord::Base
         self.longitude
       end
       def gmaps4rails_infowindow
-      "<h1>#{self.text}</h1>" << "<img src=\"#{self.img_url}\" height=\"300\">"
-
-
+        user = User.find_by_id_user(self.id_user)
+        "<h1>#{user.name}</h1>" << "<img src=\"#{self.img_url}\" height=\"300\">"
       end
  
 
