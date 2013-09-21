@@ -38,11 +38,11 @@ class @Gmaps4Rails
       center_on_user: false   # centers map on the location detected through the browser
       center_latitude: -35
       center_longitude: -30
-      zoom: 7
+      zoom: 4
       maxZoom: null
       minZoom: 2
       auto_adjust : true      # adjust the map to the markers if set to true
-      auto_zoom: true         # zoom given by auto-adjust
+      auto_zoom: false         # zoom given by auto-adjust
       bounds: []              # adjust map to these limits. Should be [{"lat": , "lng": }]
       raw: {}                  # raw json to pass additional options
 
