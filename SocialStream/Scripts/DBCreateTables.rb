@@ -2,6 +2,8 @@
 # This script create the tables for SocialStream project
 # Don't change this script if you want to add a row on some table. Change config.yml
 # Remember: This script don't create the database, just the tables
+# Created by J. H. Kersul
+
 require 'mysql'
 require 'yaml'
 
