@@ -256,8 +256,10 @@ class @Gmaps4Rails
         #extract options, test if value passed or use default
         Lat = @markers[index].lat
         Lng = @markers[index].lng
-
         
+        #Before randomize, here we save the Latitude and Longitude in a new variable to avoid markers without geolocalization
+        LatDB = Lat
+        LngDB = Lng
           
         #alter coordinates if randomize is true
         if @markers_conf.randomize
@@ -267,7 +269,7 @@ class @Gmaps4Rails
           Lng = LatLng[1]
         
         # As we know, data without geolocalization will save as 0, 0
-        if (Lat != 0 && Lng != 0)
+        if (LatDB != 0 && LngDB != 0)
           #save object
           @markers[index].serviceObject = @createMarker
             "marker_picture":   if @markers[index].picture  then @markers[index].picture else @markers_conf.picture
