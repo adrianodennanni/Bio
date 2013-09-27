@@ -6,7 +6,7 @@
 require "tweetstream"
 require "time"
 require "yaml"
-require "mysql"
+require "mysql2"
 
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
@@ -34,7 +34,7 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-connection = Mysql.new host, user, pass, database
+connection = Mysql2::Client.new(:host => host, :username => user, :password => pass, :database => database)
 
 puts "Initializing Tweet Searcher"
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
