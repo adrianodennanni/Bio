@@ -38,7 +38,6 @@ connection = Mysql2::Client.new(:host => host, :username => user, :password => p
 
 puts "Initializing Tweet Searcher"
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
-  puts "Teste"
   ######## USER ########
 
   # Direct variables
