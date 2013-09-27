@@ -38,6 +38,7 @@ connection = Mysql2::Client.new(:host => host, :username => user, :password => p
 
 puts "Initializing Tweet Searcher"
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
+  puts "Teste"
   ######## USER ########
 
   # Direct variables
@@ -55,7 +56,7 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   
   # Saving User
   # If the user already exists update the data
-  if (connection.query("SELECT id_user FROM User WHERE id_user='#{id_user}'").num_rows==0)
+  if (connection.query("SELECT id_user FROM User WHERE id_user='#{id_user}'").count==0)
     # Saving the user data
     connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, \
     num_followers, num_following, num_tweets, profile_created_at, location, website) VALUES('#{id_user}', \
@@ -132,5 +133,5 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   puts "Longitude: #{longitude}"
   puts "Urls: #{urls}"
   puts "\n \n"
-
+  
 end
