@@ -57,4 +57,5 @@ Gmapstest02::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   resources :map
   root :to => 'map#index'
+  match '/tweetbox', :to => 'map#tweetbox'
 end
