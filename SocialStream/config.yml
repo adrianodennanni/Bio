@@ -1,4 +1,6 @@
 # Configuration File
+# Created by J. H. Kersul
+
 ##### Database #####
 LOGIN_MYSQL: 'bio'
 PASSWORD_MYSQL: 'poli'
