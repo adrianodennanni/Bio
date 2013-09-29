@@ -3,42 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-@import url(http://fonts.googleapis.com/css?family=Telex);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Open+Sans:700,300);
 
-body,
-input,
-textarea {
-    font: 16px/24px 'Telex', sans-serif;
-    color: #333;
-    -webkit-font-smoothing: antialiased;
-    }
 
-pre,
-code { font:normal 12px/20px monospace; }
+
+body {
+  font-size: 12px 'Droid Sans';
+  }
     
-h1, h2 {
-    font: .75em/1em 'Telex', serif;
-    text-align: center;
-    }
+h1{
+  font-size: 12px 'Open Sans', bold;
+  } 
+
+h2 {
+  font-size: 12px 'Open Sans', light;
+  }
+  
+title {
+  font-size: 34px 'Raleway';
+}
 
 a {
     color:#369;
     text-decoration:none;
     }
 
-/* Layout */
 
-h1,h2 {
-
-    text-align: center;
-    }
-
-p {
-    margin-bottom: 20px;
-    text-align: center;
-    }
-
-#contentrt {
+#content {
     position: absolute;
     top: 50px;
     right: 0px;
