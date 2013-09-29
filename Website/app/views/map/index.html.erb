@@ -2,15 +2,31 @@
 	<head>
 		<!--FancyBox-->
 		<script>
-			$("#iframe").fancybox({
-			'width'         : '60%',
-			'height'        : '90%',
+			$("#about").fancybox({
+			'width'         : '400px',
+			'height'        : '300px',
+			'autoScale'     : false,
+			'transitionIn'  : 'none',
+			'transitionOut' : 'none',
+			'type'          : 'iframe'
+		});
+			$("#statistics").fancybox({
+			'width'         : '600px',
+			'height'        : '400px',
 			'autoScale'     : false,
 			'transitionIn'  : 'none',
 			'transitionOut' : 'none',
 			'type'          : 'iframe'
 		});
 		</script>
+		
+		<--! Esse é o style dos tweets laterais></--!>
+		<style>
+			#image {float:left;margin-left: 3px;margin-top:3px;}
+			#name {float:left;}
+			#username {float:left;}
+			#text {float:left;}
+		</style>
 		
 	</head>
 
@@ -19,12 +35,24 @@
 			#biobr
 		</div>
 
-		<div id="content">
-			<iframe src="tweetbox" width="100%" height="100%" frameborder="0"></iframe>
+		<div id="contentrt">
+		<% Tweet.all.each do |tweet| %>
+			<% user = User.find_by_id_user(tweet.id_user) %>
+			<div id="image"><img src="<%= user.profile_image %>" /></div>
+			<div id="name"><b><%= user.name %></b></div>
+			<br />
+			<div id="username"><b>@<%= user.username %></b></div>
+			<br />
+			<div id="text"><%= tweet.text %></div>
+			<br />
+			<hr />
+		<% end %>
+
 		</div>
 
 		<div id="footer">
-			<a id="iframe" class="fancybox" rel="group" href="about.html" title="Sobre">Sobre.</a>
+			<a id="about" class="fancybox" rel="group" href="about.html" title="Sobre">Sobre</a>
+			<a id="statistics" class="fancybox" rel="group" href="statistics.html" title="Sobre">Estatísticas</a>
 		</div>
 
 		<%= gmaps4rails(@json) %>
