@@ -38,21 +38,20 @@ p {
     text-align: center;
     }
 
-#content {
+#contentrt {
     position: absolute;
     top: 50px;
     right: 0px;
     bottom: 0px;
-    padding: 0 20px;
-    width: 279px;
+    width: 319px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: scroll;
     z-index: 2;
     }
-
+    
 #header {
     font: 36px 'Telex';
     vertical-align: middle;
@@ -60,7 +59,8 @@ p {
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 320px;
+    width: 319px;
+    border-left: 1px solid #ccc;
     height: 50px;	
     background: #444;
     color: white;
