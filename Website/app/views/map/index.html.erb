@@ -33,21 +33,22 @@
 
 	<body>
 		<div id="header">
-			<title>biobr</title>
+			#biobr
 		</div>
 
 	<div id="content">
-		<%= Tweet.all.each do |tweet| %>
-	      <% user = User.find_by_id_user(tweet.id_user) %>
-	      <div id="image"><img src="<%= user.profile_image %>" /></div>
-	      <div id="name"><h1><%= user.name %></h1></div>
-	      <br />
-	      <div id="username"><h2>@<%= user.username %></h2></div>
-	      <br />
-	      <div id="text"><body><%= tweet.text %></body></div>
-	      <div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div>
-	      <hr />
-	    <% end %> 
+		<% Tweet.all.each do |tweet| %>
+			<% user = User.find_by_id_user(tweet.id_user) %>
+			<div id="image"><img src="<%= user.profile_image %>" /></div>
+			<div id="name"><b><%= user.name %></b></div>
+			<br />
+			<div id="username"><b>@<%= user.username %></b></div>
+			<br />
+			<div id="text"><%= tweet.text %></div>
+			<div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div>
+			<br />
+			<hr />
+		<% end %>
 	</div>
 
 		<div id="footer">
