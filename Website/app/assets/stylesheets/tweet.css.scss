@@ -8,19 +8,24 @@
 
 
 body {
-  font-size: 12px 'Droid Sans';
+  font-family:"Droid Sans";
+  font-size:14px;
   }
     
 h1{
-  font-size: 12px 'Open Sans', bold;
+  font-family:"Open Sans", bold;
+  font-size:12px;
   } 
 
 h2 {
-  font-size: 12px 'Open Sans', light;
+  font-family:"Open Sans", light;
+  font-size:12px;
   }
   
-title {
-  font-size: 34px 'Raleway';
+title1 {
+  font-family:"Raleway";
+  font-size:34px;
+  text-align: center;
 }
 
 a {
@@ -44,7 +49,6 @@ a {
     }
     
 #header {
-    font: 36px 'Telex';
     vertical-align: middle;
     display: table-cell;
     position: absolute;
