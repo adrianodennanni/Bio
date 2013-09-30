@@ -4,4 +4,10 @@ class MapController < ApplicationController
     @json = @tweets.to_gmaps4rails 
   end
   
+  def about
+    
+  end
+  
+  def statistics
+  end
 end

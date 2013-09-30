@@ -23,8 +23,8 @@
 		<!-- Esse é o style dos tweets laterais -->
 		<style>
 			#image {float:left;margin-left: 3px;margin-top:3px;}
-			#name {float:left;}
-			#username {float:left;}
+			#name {float:left;margin-left: 3px;margin-top:3px;}
+			#username {float:left;margin-left: 3px;margin-top:4px;}
 			#text {float:left;}
 			#picture {postion:absolute;left: 10px;}
 		</style>
@@ -33,11 +33,11 @@
 
 	<body>
 		<div id="header">
-			#biobr
+			<title1>#biobr</title1>
 		</div>
 
 	<div id="content">
-		<% Tweet.all.each do |tweet| %>
+		<% Tweet.all.reverse.each do |tweet| %>
 			<% user = User.find_by_id_user(tweet.id_user) %>
 			<div id="image"><img src="<%= user.profile_image %>" /></div>
 			<div id="name"><h1><%= user.name %></h1></div>
@@ -52,8 +52,8 @@
 	</div>
 
 		<div id="footer">
-			<a id="about" class="fancybox" rel="group" href="about.html" title="Sobre"><title1>Sobre</title1></a>
-			<a id="statistics" class="fancybox" rel="group" href="statistics.html" title="Sobre"><title1>Estatísticas</title1></a>
+			<a id="about" class="fancybox" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
+			<a id="statistics" class="fancybox" rel="group" href="estatisticas" title="Estatísticas"><title2>Estatísticas</title2></a>
 		</div>
 
 		<%= gmaps4rails(@json) %>

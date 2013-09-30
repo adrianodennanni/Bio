@@ -10,22 +10,32 @@
 body {
   font-family:"Droid Sans";
   font-size:14px;
+  text-align: center;
   }
     
 h1{
   font-family:"Open Sans", bold;
   font-size:12px;
+  text-align: left;
   } 
 
 h2 {
   font-family:"Open Sans", light;
   font-size:12px;
+  text-align: left;
   }
   
 title1 {
   font-family:"Raleway";
   font-size:34px;
   text-align: center;
+}
+
+title2 {
+  font-family:"Raleway";
+  font-size:34px;
+  text-align: center;
+  margin-left: 3%;
 }
 
 a {
@@ -46,6 +56,7 @@ a {
     overflow-x: hidden;
     overflow-y: scroll;
     z-index: 2;
+    text-align: center;
     }
     
 #header {
@@ -69,5 +80,5 @@ a {
     right: 320px;
     left: 0px;
     height: 40px;
-    font: 32px 'Telex';
+    text-align: center;
     }
