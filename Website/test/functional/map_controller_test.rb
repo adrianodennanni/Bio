@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class MapControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get tweets" do
+    get :tweets
+    assert_response :success
+  end
+
 end

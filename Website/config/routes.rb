@@ -1,4 +1,6 @@
 Gmapstest02::Application.routes.draw do
+  get "map/tweets"
+
   get "map/about"
 
   get "map/statistics"
@@ -62,5 +64,5 @@ Gmapstest02::Application.routes.draw do
   root :to => 'map#index'
   match '/sobre' => 'map#about'
   match '/estatisticas' => 'map#statistics'
-  match '/tweetbox', :to => 'map#tweetbox'
+  match '/tweets' => 'map#tweets'
 end

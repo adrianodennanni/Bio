@@ -40,9 +40,9 @@ title2 {
 }
 
 a {
-    color:#369;
-    text-decoration:none;
-    }
+  color:#369;
+  text-decoration:none;
+}
     
 #image {
   float:left;
@@ -80,10 +80,18 @@ a {
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     z-index: 2;
     text-align: center;
     }
+    
+#sidebar{
+  position: absolute;
+  right: 0px;
+  bottom: 50px;
+  left: 0px;
+  top: 0px;
+}
     
 #header {
     vertical-align: middle;

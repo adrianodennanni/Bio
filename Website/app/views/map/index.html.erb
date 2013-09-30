@@ -30,19 +30,9 @@
 			<title1>#biobr</title1>
 		</div>
 	
-	<div id="content">
-		<% @tweets.each do |tweet| %>
-			<% user = User.find_by_id_user(tweet.id_user) %>
-			<div id="image"><img src="<%= user.profile_image %>" /></div>
-			<div id="name"><h1><%= user.name %></h1><h2>@<%= user.username %></h2></div>
-			<br />
-			<div id="text"><%= tweet.text %></div>
-			<div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div>
-			<hr />
-		<% end %>
-		
-		<%= will_paginate @tweets %>
-	</div>
+		<div id="content">
+			<iframe src="tweets" width="100%" height="100%"></iframe>
+		</div>
 
 		<div id="footer">
 			<a id="about" class="fancybox" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
