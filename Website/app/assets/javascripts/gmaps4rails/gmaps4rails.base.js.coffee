@@ -38,7 +38,7 @@ class @Gmaps4Rails
       center_on_user: false   # centers map on the location detected through the browser
       center_latitude: -23.6
       center_longitude: -46.7
-      zoom: 14
+      zoom: 3
       maxZoom: null
       minZoom: 2
       auto_adjust : false      # adjust the map to the markers if set to true
