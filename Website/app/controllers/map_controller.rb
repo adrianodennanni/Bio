@@ -4,4 +4,10 @@ class MapController < ApplicationController
     @tweets = Tweet.order('id_tweet DESC').paginate(page: params[:page] , :per_page => 5)
   end
   
+  def about
+    
+  end
+  
+  def statistics
+  end
 end
