@@ -1,4 +1,4 @@
-		<div id="sidebar">
+	<div id="sidebar">
 		<% @tweets.each do |tweet| %>
 			<% user = User.find_by_id_user(tweet.id_user) %>
 			<div id="image"><a href="https://twitter.com/<%= user.username %>/status/<%= tweet.id %>"><img src="<%= user.profile_image %>" /></a></div>

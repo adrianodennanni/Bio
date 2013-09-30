@@ -5,19 +5,17 @@
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Open+Sans:700,300);
 
-
-
 body {
   font-family:"Droid Sans";
   font-size:14px;
   text-align: center;
-  }
+}
     
 h1{
   font-family:"Open Sans", bold;
   font-size:12px;
   text-align: left;
-  } 
+}
 
 h2 {
   font-family:"Open Sans", light;
@@ -27,13 +25,13 @@ h2 {
   
 title1 {
   font-family:"Raleway";
-  font-size:34px;
+  font-size:24px;
   text-align: center;
 }
 
 title2 {
   font-family:"Raleway";
-  font-size:34px;
+  font-size:24px;
   text-align: center;
   margin-left: 2%;
   margin-right: 2%
@@ -68,7 +66,7 @@ a {
   postion:absolute;
   top: 5px;
   left: 10px;
-  }
+}
 
 #content {
     position: absolute;
@@ -83,7 +81,7 @@ a {
     overflow-y: hidden;
     z-index: 2;
     text-align: center;
-    }
+}
     
 #sidebar{
   position: absolute;
@@ -92,7 +90,7 @@ a {
   left: 0px;
   top: 0px;
 }
-    
+
 #header {
     vertical-align: middle;
     display: table-cell;
@@ -104,7 +102,7 @@ a {
     height: 50px;	
     background: #444;
     color: white;
-    }
+}
 
 #footer {
     position: absolute;
@@ -115,4 +113,4 @@ a {
     left: 0px;
     height: 40px;
     text-align: center;
-    }
+}
