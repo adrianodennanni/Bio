@@ -40,9 +40,9 @@
 		<% Tweet.all.each do |tweet| %>
 			<% user = User.find_by_id_user(tweet.id_user) %>
 			<div id="image"><img src="<%= user.profile_image %>" /></div>
-			<div id="name"><b><%= user.name %></b></div>
+			<div id="name"><h1><%= user.name %></h1></div>
 			<br />
-			<div id="username"><b>@<%= user.username %></b></div>
+			<div id="username"><h2>@<%= user.username %></h2></div>
 			<br />
 			<div id="text"><%= tweet.text %></div>
 			<div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div>
@@ -52,8 +52,8 @@
 	</div>
 
 		<div id="footer">
-			<a id="about" class="fancybox" rel="group" href="about.html" title="Sobre">Sobre</a>
-			<a id="statistics" class="fancybox" rel="group" href="statistics.html" title="Sobre">Estatísticas</a>
+			<a id="about" class="fancybox" rel="group" href="about.html" title="Sobre"><title1>Sobre</title1></a>
+			<a id="statistics" class="fancybox" rel="group" href="statistics.html" title="Sobre"><title1>Estatísticas</title1></a>
 		</div>
 
 		<%= gmaps4rails(@json) %>
