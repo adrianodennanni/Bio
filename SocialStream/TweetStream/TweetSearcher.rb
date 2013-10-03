@@ -52,16 +52,19 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   profile_created_at = status.user.created_at
   location = status.user.location
   website = status.user.url
+  user_reputation=0
+  tweet_reputation=0
+  reports=0
   
   # Saving User
   # If the user already exists update the data
   if (connection.query("SELECT id_user FROM User WHERE id_user='#{id_user}'").count==0)
     # Saving the user data
     connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, \
-    num_followers, num_following, num_tweets, profile_created_at, location, website) VALUES('#{id_user}', \
+    num_followers, num_following, num_tweets, profile_created_at, location, website, user_reputation) VALUES('#{id_user}', \
     '#{username}', '#{name}', '#{profile_image}', '#{profile_bio}', \
     '#{num_followers}', '#{num_following}', '#{num_tweets}', \
-    '#{profile_created_at}', '#{location}', '#{website}')")
+    '#{profile_created_at}', '#{location}', '#{website}', '#{user_reputation}')")
   else
   # Updating the user data
     connection.query("UPDATE `bio`.`User` SET `username`='#{username}', `name`='#{name}', \
@@ -101,7 +104,7 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   end
 
   # Saving tweet
-  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, urls, id_user) VALUES( \
+  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, urls, id_user, tweet_reputation, reports) VALUES( \
   '#{id_tweet}', \
   '#{text}', \
   '#{img_url}', \
@@ -109,7 +112,9 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   '#{latitude}', \
   '#{longitude}', \
   '#{urls}', \
-  '#{id_user}')");
+  '#{id_user}', \
+  '#{tweet_reputation}', \
+  '#{reports}')");
   
   ### Printing Data ###
   puts "### USER ###"
