@@ -1,0 +1,116 @@
+// Place all the styles related to the Tweet controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Open+Sans:700,300);
+
+body {
+  font-family:"Droid Sans";
+  font-size:14px;
+  text-align: center;
+}
+    
+h1{
+  font-family:"Open Sans", bold;
+  font-size:12px;
+  text-align: left;
+}
+
+h2 {
+  font-family:"Open Sans", light;
+  font-size:12px;
+  text-align: left;
+  }
+  
+title1 {
+  font-family:"Raleway";
+  font-size:24px;
+  text-align: center;
+}
+
+title2 {
+  font-family:"Raleway";
+  font-size:24px;
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 2%
+}
+
+a {
+  color:#369;
+  text-decoration:none;
+}
+    
+#image {
+  float:left;
+  margin-left: 3px;
+  margin-top:  3px;
+  top: 3px;
+  }
+  
+#name {
+  float:left;
+  margin-left: 3px;
+  margin-top:3px;
+  width: 250px;
+  }
+  
+#text {
+  float: left;
+  margin-left: 3px;
+  text-align:left;
+  }
+  
+#picture {
+  postion:absolute;
+  top: 5px;
+  left: 10px;
+}
+
+#content {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    width: 319px;
+    background: rgb(255,255,255); /* old IE */
+    background: rgba(255,255,255,.9);
+    border-left: 1px solid #ccc;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 2;
+    text-align: center;
+}
+    
+#sidebar{
+  position: absolute;
+  right: 0px;
+  bottom: 50px;
+  left: 0px;
+  top: 0px;
+}
+
+#header {
+    vertical-align: middle;
+    display: table-cell;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 319px;
+    border-left: 1px solid #ccc;
+    height: 50px;	
+    background: #444;
+    color: white;
+}
+
+#footer {
+    position: absolute;
+    text-align: justify;
+    vertical-align: middle;
+    bottom: 0px;
+    right: 320px;
+    left: 0px;
+    height: 40px;
+    text-align: center;
+}

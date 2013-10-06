@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<!--FancyBox-->
+		<script>
+			$("#about").fancybox({
+			'width'         : '400px',
+			'height'        : '300px',
+			'autoScale'     : false,
+			'transitionIn'  : 'none',
+			'transitionOut' : 'none',
+			'type'          : 'iframe',
+			'enableEscapeButton' : true
+		});
+		
+			$("#statistics").fancybox({
+			'width'         : '600px',
+			'height'        : '500px',
+			'autoScale'     : false,
+			'transitionIn'  : 'none',
+			'transitionOut' : 'none',
+			'type'          : 'iframe',
+			'enableEscapeButton' : true
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="header">
+			<title1>#biobr</title1>
+		</div>
+	
+		<div id="content">
+			<iframe src="tweets" width="100%" height="100%"></iframe>
+		</div>
+
+		<div id="footer">
+			<a id="about" class="fancybox" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
+			<a id="statistics" class="fancybox" rel="group" href="estatisticas" title="Estatísticas"><title2>Estatísticas</title2></a>
+		</div>
+		
+		
+		<%= gmaps4rails(@json) %>
+		
+		
+	</body>
+</html>
