@@ -1,6 +1,10 @@
 class MapController < ApplicationController
   def index
-    @json = Tweet.all.to_gmaps4rails 
+    @json = Tweet.all.to_gmaps4rails
+    @latitude = Tweet.where("latitude != 0").last.latitude
+    @longitude = Tweet.where("longitude != 0").last.longitude
+    gon.latitude = @latitude
+    gon.longitude = @longitude
   end
   
   def about

@@ -42,6 +42,9 @@ GEM
     fancybox2-rails (0.2.4)
       railties (>= 3.1.0)
     gmaps4rails (1.5.6)
+    gon (3.0.5)
+      actionpack (>= 2.3.0)
+      json
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -109,6 +112,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fancybox2-rails
   gmaps4rails
+  gon (= 3.0.5)
   jquery-rails
   mysql2
   rails (= 3.2.1)
