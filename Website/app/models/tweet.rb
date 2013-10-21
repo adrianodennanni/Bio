@@ -11,8 +11,6 @@ class Tweet < ActiveRecord::Base
       end
       def gmaps4rails_infowindow
         user = User.find_by_id_user(self.id_user)
-        "<h1>#{user.name} <br>@#{user.username}</h1>" << "<h2>#{self.text}<br><br><img src=\"#{self.img_url}\" height=\"400\"></h2>"
+        "<div id='image'><a href='https://twitter.com/#{user.username}/status/#{self.id}'><img src='#{user.profile_image}' /></a></div>" << "<div id='name'><h1>#{user.name}</h1><h2>@#{user.username}</h2></div>" << "<br />" << "<div id='text'>#{self.text}</div>" << "<div id='picture'><img src='#{self.img_url}'  width='300'></div>" 
       end
- 
-
 end

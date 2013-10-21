@@ -21,7 +21,7 @@ h2 {
   font-family:"Open Sans", light;
   font-size:12px;
   text-align: left;
-  }
+}
   
 title1 {
   font-family:"Raleway";
@@ -46,22 +46,23 @@ a {
   float:left;
   margin-left: 3px;
   margin-top:  3px;
-  top: 3px;
-  }
+  top: 0px;
+}
   
 #name {
   float:left;
   margin-left: 3px;
   margin-top:3px;
   width: 250px;
-  }
+}
   
 #text {
   float: left;
-  margin-left: 3px;
+  margin-left: 5px;
+  margin-bottom: 7px;
   text-align:left;
-  }
-  
+}
+
 #picture {
   postion:absolute;
   top: 5px;
@@ -82,7 +83,7 @@ a {
     z-index: 2;
     text-align: center;
 }
-    
+
 #sidebar{
   position: absolute;
   right: 0px;
