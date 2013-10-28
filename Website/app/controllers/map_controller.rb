@@ -13,7 +13,13 @@ class MapController < ApplicationController
   
   def statistics
   end
+
+  def infobox
+    gon.username=User.username
+    gon.tweetid=Tweet.id_tweet
+  end
   
+ 
   def tweets
     @tweets = Tweet.order('id_tweet DESC').paginate(page: params[:page] , :per_page => 5)
   end

@@ -3,23 +3,28 @@
 		<!--FancyBox-->
 		<script>
 			$("#about").fancybox({
-			'width'         : '400px',
-			'height'        : '300px',
+			'width'         : '600px',
+			'height'        : '600px',
 			'autoScale'     : false,
 			'transitionIn'  : 'none',
 			'transitionOut' : 'none',
 			'type'          : 'iframe',
-			'enableEscapeButton' : true
+			'enableEscapeButton' : true,
+			'fitToView' : false,
+   			'autoSize' : false
 		});
 		
 			$("#statistics").fancybox({
-			'width'         : '600px',
-			'height'        : '500px',
+			'width'         : '400',
+			'height'        : '390',
 			'autoScale'     : false,
 			'transitionIn'  : 'none',
 			'transitionOut' : 'none',
 			'type'          : 'iframe',
-			'enableEscapeButton' : true
+			'scrolling'     : 'no',
+			'enableEscapeButton' : true,
+			'fitToView' : false,
+   			'autoSize' : false
 		});
 		</script>
 		
@@ -35,8 +40,8 @@
 		</div>
 
 		<div id="footer">
-			<a id="about" class="fancybox" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
-			<a id="statistics" class="fancybox" rel="group" href="estatisticas" title="Estatísticas"><title2>Estatísticas</title2></a>
+			<a id="about" class="fancybox.iframe" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
+			<a id="statistics" class="fancybox.iframe" rel="group" href="estatisticas" title="Estatísticas"><title2>Estatísticas</title2></a>
 		</div>
 		
 		

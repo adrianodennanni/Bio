@@ -3,24 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Open+Sans:700,300);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Open+Sans:700,300|Trykker);
 
 body {
-  font-family:"Droid Sans";
+  font-family:"Raleway";
   font-size:14px;
-  text-align: center;
+  text-align: left;
 }
+
+
     
 h1{
   font-family:"Open Sans", bold;
-  font-size:12px;
+  font-size:15px;
   text-align: left;
+  line-height: 0px;
 }
 
 h2 {
   font-family:"Open Sans", light;
-  font-size:12px;
-  text-align: left;
+  font-size:13px;
+  font-weight: normal;
+  color:#4F514F;
 }
   
 title1 {
@@ -53,18 +57,28 @@ a {
   float:left;
   margin-left: 3px;
   margin-top:3px;
-  width: 250px;
 }
   
 #text {
   float: left;
-  margin-left: 5px;
+  margin-left: 0px;
+  margin-top: 7px;
   margin-bottom: 7px;
   text-align:left;
+  padding: 1px; 
+  width: 299px;
+  font-size:15px;
+}
+
+#date {
+  float: right;
+  text-align: right;
+  padding-right: 2px;
+  width: 320px;
 }
 
 #picture {
-  postion:absolute;
+  postion: absolute;
   top: 5px;
   left: 10px;
 }
@@ -74,7 +88,7 @@ a {
     top: 50px;
     right: 0px;
     bottom: 0px;
-    width: 319px;
+    width: 320px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
@@ -86,9 +100,9 @@ a {
 
 #sidebar{
   position: absolute;
-  right: 0px;
+  right: 3px;
   bottom: 50px;
-  left: 0px;
+  left: 3px;
   top: 0px;
 }
 
@@ -98,11 +112,12 @@ a {
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 319px;
-    border-left: 1px solid #ccc;
-    height: 50px;	
+    width: 320px;
+    height: 40px;	
     background: #444;
     color: white;
+    text-align: center;
+    padding-top: 10px;
 }
 
 #footer {
@@ -114,4 +129,39 @@ a {
     left: 0px;
     height: 40px;
     text-align: center;
+}
+
+#paginate {
+  text-align: center;
+}
+
+#statistics {
+  height: 360px;
+}
+
+
+#Hashtags {
+  float: center;
+  text-align: left;
+  width:50%;
+  margin-left:25%;
+  
+}
+
+#Hashtags_1 {
+  float: left;
+  width:75%;
+}
+
+#Hashtags_2 {
+  float: right;
+  width:25%;
+}
+#Hashtags_3 {
+  float: center;
+  width:100%;
+  text-align:center;
+}
+#Hashtags_Aviso {
+  float: center;
 }

@@ -1,14 +1,28 @@
+
+		<script>
+			$("#photo").fancybox({
+			'width'         : '400px',
+			'height'        : '300px',
+			'autoScale'     : false,
+			'transitionIn'  : 'none',
+			'transitionOut' : 'none',
+			'type'          : 'iframe',
+			'enableEscapeButton' : true
+		});
+		</script>
 	<div id="sidebar">
 		<% @tweets.each do |tweet| %>
 			<% user = User.find_by_id_user(tweet.id_user) %>
-			<div id="image"><a href="https://twitter.com/<%= user.username %>/status/<%= tweet.id %>"><img src="<%= user.profile_image %>" /></a></div>
+			<div id="image"><a target="_blank" href="https://twitter.com/<%= user.username %>"><img src="<%= user.profile_image %>" /></a></div>
 			<div id="name"><h1><%= user.name %></h1><h2>@<%= user.username %></h2></div>
 			<br />
 			<div id="text"><%= tweet.text %></div>
-			<div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div>
+			<a target="_blank" href="https://twitter.com/<%= user.username %>/status/<%= tweet.id %>"><div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div></a>
+			<div id="date"><h2><%= tweet.date_tweet.strftime('%d/%m/%Y - %Hh%M') %></h2></div>
 			<hr />
 		<% end %>
 		
-		<%= will_paginate @tweets %>
+		<div id="paginate"><%= will_paginate @tweets %></div>
+		
 		<br/>
 	</div>
