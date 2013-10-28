@@ -17,7 +17,7 @@
 			<div id="name"><h1><%= user.name %></h1><h2>@<%= user.username %></h2></div>
 			<br />
 			<div id="text"><%= tweet.text %></div>
-			<a target="_blank" href="https://twitter.com/<%= user.username %>/status/<%= tweet.id %>"><div id="picture"><img src="<%= tweet.img_url %>"  width="300"></div></a>
+			<div id="picture"><a target="_blank" href="https://twitter.com/<%= user.username %>/status/<%= tweet.id %>"><img src="<%= tweet.img_url %>"  width="280"></a></div>
 			<div id="date"><h2><%= tweet.date_tweet.strftime('%d/%m/%Y - %Hh%M') %></h2></div>
 			<hr />
 		<% end %>

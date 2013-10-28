@@ -66,15 +66,15 @@ a {
   margin-bottom: 7px;
   text-align:left;
   padding: 1px; 
-  width: 299px;
+  width: 280px;
   font-size:15px;
 }
 
 #date {
   float: right;
   text-align: right;
-  padding-right: 2px;
-  width: 320px;
+  padding-right: 3px;
+  width: 100%;
 }
 
 #picture {
@@ -88,7 +88,7 @@ a {
     top: 50px;
     right: 0px;
     bottom: 0px;
-    width: 320px;
+    width: 300px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
