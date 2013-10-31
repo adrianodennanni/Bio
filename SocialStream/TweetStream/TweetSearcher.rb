@@ -1,12 +1,16 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 # That's an example how to use TweetStream: https://github.com/tweetstream/tweetstream
 # This application filter tweets with specific terms determined below
-# Created by J. H. Kersul
+# Created by J. H. Kersul (data aquisition) and Adriano Dennanni (auto-reply)
 
 require "tweetstream"
 require "time"
 require "yaml"
 require "mysql2"
+
+require 'rubygems'
+require 'chatterbot/dsl'
 
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
@@ -91,6 +95,8 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   if status.geo!=nil
   latitude = status.geo.coordinates[0]
   longitude = status.geo.coordinates[1]
+  else
+  reply %Q|#{tweet_user(status)} Infelizmente seu Tweet não está com a geolocalização. Poste o tweet novamente com a opção "localização" ativada.|, status
   end
 
   i=0
