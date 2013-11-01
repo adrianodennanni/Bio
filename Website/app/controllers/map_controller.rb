@@ -5,6 +5,7 @@ class MapController < ApplicationController
     @longitude = Tweet.where("longitude != 0").last.longitude
     gon.latitude = @latitude
     gon.longitude = @longitude
+    
   end
   
   def about
@@ -22,5 +23,6 @@ class MapController < ApplicationController
  
   def tweets
     @tweets = Tweet.order('id_tweet DESC').paginate(page: params[:page] , :per_page => 5)
+    @tweets = @tweets.where('latitude!=0 && longitude!=0')
   end
 end
