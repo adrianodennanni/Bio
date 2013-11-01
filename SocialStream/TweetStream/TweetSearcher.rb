@@ -81,6 +81,8 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   # Direct variables
   id_tweet = status.id
   text = status.text
+  
+  
 
   # Variables that need to be initialized and can't be null
   img_url = ""
@@ -89,7 +91,9 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   urls = ""
 
   if (status.media[0]!=nil)
-  img_url = status.media[0].media_url
+    img_url = status.media[0].media_url
+    #Removing the url from text
+    text = text.gsub(img_url, '') 
   end
 
   if status.geo!=nil
