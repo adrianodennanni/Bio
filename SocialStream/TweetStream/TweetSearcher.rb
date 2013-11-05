@@ -56,8 +56,8 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   profile_created_at = status.user.created_at
   location = status.user.location
   website = status.user.url
-  user_reputation=0
-  tweet_reputation=0
+  up_votes=0
+  down_votes=0
   reports=0
   
   # Saving User
@@ -68,7 +68,7 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
     num_followers, num_following, num_tweets, profile_created_at, location, website, up_votes, down_votes) VALUES('#{id_user}', \
     '#{username}', '#{name}', '#{profile_image}', '#{profile_bio}', \
     '#{num_followers}', '#{num_following}', '#{num_tweets}', \
-    '#{profile_created_at}', '#{location}', '#{website}', '0', '0')")
+    '#{profile_created_at}', '#{location}', '#{website}', '#{up_votes}', '#{down_votes}')")
   else
   # Updating the user data
     connection.query("UPDATE `bio`.`User` SET `username`='#{username}', `name`='#{name}', \
@@ -123,8 +123,8 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   '#{longitude}', \
   '#{urls}', \
   '#{id_user}', \
-  '0', \
-  '0')");
+  '#{up_votes}', \
+  '#{down_votes}')");
   
   ### Printing Data ###
   puts "### USER ###"
