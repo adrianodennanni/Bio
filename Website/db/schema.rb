@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131105032220) do
+ActiveRecord::Schema.define(:version => 20130915235751) do
 
   create_table "Tweet", :primary_key => "id_tweet", :force => true do |t|
     t.string   "text",       :limit => 300
@@ -51,19 +51,5 @@ ActiveRecord::Schema.define(:version => 20131105032220) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "votings", :force => true do |t|
-    t.string   "voteable_type"
-    t.integer  "voteable_id"
-    t.string   "voter_type"
-    t.integer  "voter_id"
-    t.boolean  "up_vote",       :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
-  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
-  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end

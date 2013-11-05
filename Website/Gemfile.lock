@@ -81,8 +81,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    make_voteable (0.1.1)
-      activerecord (~> 3.0)
     mime-types (1.25)
     multi_json (1.8.0)
     multipart-post (1.2.0)
@@ -156,7 +154,6 @@ DEPENDENCIES
   gmaps4rails
   gon (= 3.0.5)
   jquery-rails
-  make_voteable
   mysql2
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
