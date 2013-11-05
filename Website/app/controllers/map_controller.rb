@@ -4,13 +4,12 @@ class MapController < ApplicationController
     @latitude = Tweet.where("latitude != 0").last.latitude
     @longitude = Tweet.where("longitude != 0").last.longitude
     gon.latitude = @latitude
-    gon.longitude = @longitude
-    
+    gon.longitude = @longitude 
   end
   
-  def about
-    
+  def about  
   end
+  
   
   def statistics
   end
