@@ -36,6 +36,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
 gem 'gmaps4rails'
 gem 'twitter'
 gem 'tweetstream'
@@ -44,3 +45,4 @@ gem 'jquery-rails'
 gem 'fancybox2-rails'
 gem 'will_paginate', '~> 3.0.5'
 gem 'gon', '3.0.5'
+gem 'make_voteable'
