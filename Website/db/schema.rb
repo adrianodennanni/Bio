@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20131105032220) do
 
   create_table "Tweet", :primary_key => "id_tweet", :force => true do |t|
     t.string   "text",       :limit => 300
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.float    "longitude"
     t.string   "urls",       :limit => 1000
     t.integer  "id_user",    :limit => 8,    :null => false
+    t.integer  "up_votes"
+    t.integer  "down_votes"
   end
 
   add_index "Tweet", ["id_user"], :name => "FK_id_user"
@@ -36,6 +38,32 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "profile_created_at", :limit => 100
     t.string  "location",           :limit => 200
     t.string  "website",            :limit => 500
+    t.integer "up_votes"
+    t.integer "down_votes"
   end
+
+  create_table "tweets", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "votings", :force => true do |t|
+    t.string   "voteable_type"
+    t.integer  "voteable_id"
+    t.string   "voter_type"
+    t.integer  "voter_id"
+    t.boolean  "up_vote",       :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "votings", ["voteable_type", "voteable_id", "voter_type", "voter_id"], :name => "unique_voters", :unique => true
+  add_index "votings", ["voteable_type", "voteable_id"], :name => "index_votings_on_voteable_type_and_voteable_id"
+  add_index "votings", ["voter_type", "voter_id"], :name => "index_votings_on_voter_type_and_voter_id"
 
 end
