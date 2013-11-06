@@ -65,4 +65,5 @@ Gmapstest02::Application.routes.draw do
   match '/sobre' => 'map#about'
   match '/estatisticas' => 'map#statistics'
   match '/tweets' => 'map#tweets'
+  resources :tweet
 end

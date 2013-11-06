@@ -2,7 +2,6 @@ class Tweet < ActiveRecord::Base
   self.table_name = 'Tweet'
   
 
-  # Eliminate links and non geolocalizated Tweets
 
   acts_as_gmappable
       def gmaps4rails_address

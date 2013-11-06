@@ -165,3 +165,17 @@ a {
 #Hashtags_Aviso {
   float: center;
 }
+
+#vote_up {
+  float: left;
+  text-align: right;
+  width: 50%;
+  height: 27px;
+}
+
+#vote_down {
+  float: right;
+  text-align: left;
+  width: 50%;
+  height: 27px;
+}

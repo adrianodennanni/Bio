@@ -10,6 +10,7 @@
 			'enableEscapeButton' : true
 		});
 		</script>
+	
 	<div id="sidebar">
 		<!-- We gonna show only the geolocalizated tweets!! -->
 		<% @tweets.each do |tweet| %>
@@ -22,6 +23,16 @@
 			<div id="text"><%= tweet.text %></div>
 			<div id="picture"><a target="_blank" href="https://twitter.com/<%= user.username %>/status/<%= tweet.id %>"><img src="<%= tweet.img_url %>"  width="280"></a></div>
 			<div id="date"><h2><%= tweet.date_tweet.strftime('%I:%M %p - %d %b %y') %></h2></div>
+			<% if (session[tweet.id] == 'select_up') %>
+			<div id="vote_up"></div>
+			<div id="vote_down"><%= button_to( "Dislike", :action => "create", :controller => "tweet", :id_tweet => tweet.id, :vote => 'down') %> </div>
+			<% elsif (session[tweet.id] == 'select_down') %>
+			<div id="vote_up"><%= button_to( "Like", :action => "create", :controller => "tweet", :id_tweet => tweet.id, :vote => 'up')%> </div>
+			<div id="vote_down"></div>
+			<% else %>
+			<div id="vote_up"><%= button_to( "Like", :action => "create", :controller => "tweet", :id_tweet => tweet.id, :vote => 'up')%> </div>
+			<div id="vote_down"><%= button_to( "Dislike", :action => "create", :controller => "tweet", :id_tweet => tweet.id, :vote => 'down') %> </div>
+			<% end %>
 			<hr />
 		<% end %>
 		<div id="paginate"><%= will_paginate @tweets %></div>
