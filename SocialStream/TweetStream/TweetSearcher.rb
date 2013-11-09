@@ -95,12 +95,13 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
     #Removing the url from text
     text = text.gsub(img_url, '') 
   end
-
+  
   if status.geo!=nil
   latitude = status.geo.coordinates[0]
   longitude = status.geo.coordinates[1]
   else
-  reply %Q|#{tweet_user(status)} Infelizmente seu Tweet não está com a geolocalização. Poste o tweet novamente com a opção "localização" ativada.|, status
+  date_now = Time.now.strftime('%I:%M:%S de %d/%m/%y')
+  reply %Q|#{tweet_user(status)} Seu Tweet enviado às #{date_now} não foi geolocalizado. Poste o tweet novamente com a opção "localização" ativada|, status
   end
 
   i=0
