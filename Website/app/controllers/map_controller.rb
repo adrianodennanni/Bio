@@ -21,7 +21,10 @@ class MapController < ApplicationController
   
  
   def tweets
+    
     @tweets = Tweet.order('id_tweet DESC').paginate(page: params[:page] , :per_page => 5)
-    @tweets = @tweets.where('latitude!=0 && longitude!=0')
+    # Only load tweets with localization
+    @tweets = @tweets.where('latitude!=0 || longitude!=0')
+    
   end
 end

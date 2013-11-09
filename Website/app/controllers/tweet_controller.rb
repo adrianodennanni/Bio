@@ -43,6 +43,7 @@ class TweetController < ApplicationController
     @user.update_attribute('up_votes', up_user)
   end
   
+  
   private
   def increaseVoteDown
     down_tweet = @twit.down_votes + 1
@@ -66,5 +67,6 @@ class TweetController < ApplicationController
     @twit.update_attribute('down_votes', down_tweet)
     @user.update_attribute('down_votes', down_user)
   end
+  
   
 end
