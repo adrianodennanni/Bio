@@ -179,3 +179,13 @@ a {
   width: 50%;
   height: 27px;
 }
+
+#vote_buttons {
+  opacity:1.0;
+  height: 23px;
+  widht: 23px;
+}
+
+#vote_buttons:hover {
+  opacity:0.8;
+}

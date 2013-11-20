@@ -1,6 +1,6 @@
 class TweetController < ApplicationController
   
-  def create
+  def index
     @twit = Tweet.find(params[:id_tweet])
     @user = User.find(@twit.id_user)
     if (params[:vote]=='up')
