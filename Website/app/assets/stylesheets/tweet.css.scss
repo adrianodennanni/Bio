@@ -88,7 +88,7 @@ a {
     top: 50px;
     right: 0px;
     bottom: 0px;
-    width: 300px;
+    width: 305px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
     border-left: 1px solid #ccc;
@@ -102,7 +102,7 @@ a {
 #sidebar{
   position: absolute;
   right: 3px;
-  bottom: 50px;
+  bottom: 0px;
   left: 3px;
   top: 0px;
   -webkit-overflow-scrolling:touch; /* iOS scrolling*/
@@ -114,9 +114,10 @@ a {
     vertical-align: middle;
     display: table-cell;
     position: absolute;
+    z-index: 2;
     top: 0px;
     right: 0px;
-    width: 300px;
+    width: 305px;
     height: 40px;	
     background: #444;
     color: white;
@@ -129,7 +130,7 @@ a {
     text-align: justify;
     vertical-align: middle;
     bottom: 0px;
-    right: 320px;
+    right: 305px;
     left: 0px;
     height: 40px;
     text-align: center;
