@@ -96,6 +96,7 @@ a {
     overflow-y: hidden;
     z-index: 2;
     text-align: center;
+  -webkit-overflow-scrolling:touch; /* iOS scrolling*/
 }
 
 #sidebar{
