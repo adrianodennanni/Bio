@@ -12,7 +12,7 @@
 		</script>
 	
 	<div id="sidebar">
-		<!-- We gonna show only the geolocalizated tweets!! -->
+		<!-- It will show only the geolocalizated tweets!! -->
 		<% @tweets.each do |tweet| %>
 			<% user = User.find_by_id_user(tweet.id_user) %>
 			
