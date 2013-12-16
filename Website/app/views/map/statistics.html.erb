@@ -1,6 +1,6 @@
 <div id="statistics">
 		<title1>Geral</title1>
-		<p><b>Quantidade tweets:</b> <%= Tweet.all.count %></p>
+		<p><b>Número de Tweets (Incluindo não-geolocalizados):</b> <%= Tweet.all.count %></p>
 		<p><b>Último Tweet Postado Em:</b> <%= Tweet.all.last.date_tweet.strftime('%d/%m/%Y às %Hh%M') %></p>
 		<title1>Uso de Hashtag</title1>
 		<p><b>#FaunaUSP:</b> <%= Tweet.select('text').where('text like ?',"%#faunausp%").all.count %></p>

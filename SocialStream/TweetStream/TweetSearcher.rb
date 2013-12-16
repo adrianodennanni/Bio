@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
-# That's an example how to use TweetStream: https://github.com/tweetstream/tweetstream
 # This application filter tweets with specific terms determined below
 # Created by J. H. Kersul (data aquisition) and Adriano Dennanni (auto-reply)
 
@@ -8,9 +7,10 @@ require "tweetstream"
 require "time"
 require "yaml"
 require "mysql2"
-
 require 'rubygems'
 require 'chatterbot/dsl'
+require 'logging'
+
 
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
@@ -40,10 +40,16 @@ end
 
 connection = Mysql2::Client.new(:host => host, :username => user, :password => pass, :database => database)
 
-puts "Initializing Tweet Searcher"
-TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
-  ######## USER ########
 
+logger = Logging.logger('Log/Output.log')
+logger.level = :info
+logger.info "Initializing Tweet Searcher"
+
+puts "Starting"
+
+TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
+  puts "RUN"
+  ######## USER ########
   # Direct variables
   id_user = status.user.id
   username = status.user.screen_name
@@ -128,25 +134,25 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   '#{down_votes}')");
   
   ### Printing Data ###
-  puts "### USER ###"
-  puts "ID User: #{id_user}"
-  puts "Username: #{username}"
-  puts "Name: #{name}"
-  puts "Profile Image: #{profile_image}"
-  puts "Profile Bio: #{profile_bio}"
-  puts "Num Followers: #{num_followers}"
-  puts "Num Following: #{num_following}"
-  puts "Num Tweets: #{num_tweets}"
-  puts "Date Profile Created: #{profile_created_at}"
-  puts "Location: #{location}"
-  puts "Website: #{website}"
-  puts "### TWEET ###"
-  puts "ID Tweet: #{id_tweet}"
-  puts "Text: #{text}"
-  puts "Image URL: #{img_url}"
-  puts "Latitude: #{latitude}"
-  puts "Longitude: #{longitude}"
-  puts "Urls: #{urls}"
-  puts "\n \n"
+  logger.info "### USER ###"
+  logger.info "ID User: #{id_user}"
+  logger.info "Username: #{username}"
+  logger.info "Name: #{name}"
+  logger.info "Profile Image: #{profile_image}"
+  logger.info "Profile Bio: #{profile_bio}"
+  logger.info "Num Followers: #{num_followers}"
+  logger.info "Num Following: #{num_following}"
+  logger.info "Num Tweets: #{num_tweets}"
+  logger.info "Date Profile Created: #{profile_created_at}"
+  logger.info "Location: #{location}"
+  logger.info "Website: #{website}"
+  logger.info "### TWEET ###"
+  logger.info "ID Tweet: #{id_tweet}"
+  logger.info "Text: #{text}"
+  logger.info "Image URL: #{img_url}"
+  logger.info "Latitude: #{latitude}"
+  logger.info "Longitude: #{longitude}"
+  logger.info "Urls: #{urls}"
+  logger.info "\n \n"
   
 end
