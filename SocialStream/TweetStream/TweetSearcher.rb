@@ -41,7 +41,7 @@ end
 connection = Mysql2::Client.new(:host => host, :username => user, :password => pass, :database => database)
 
 
-logger = Logging.logger('TweetSearcher.log')
+logger = Logging.logger('Log/Output.log')
 logger.level = :info
 logger.info "Initializing Tweet Searcher"
 
