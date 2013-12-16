@@ -85,9 +85,9 @@ a {
 
 #content {
     position: absolute;
-    top: 50px;
+    top: 80px;
     right: 0px;
-    bottom: 0px;
+    bottom: 30px;
     width: 305px;
     background: rgb(255,255,255); /* old IE */
     background: rgba(255,255,255,.9);
@@ -115,7 +115,7 @@ a {
     display: table-cell;
     position: absolute;
     z-index: 2;
-    top: 0px;
+    top: 30px;
     right: 0px;
     width: 305px;
     height: 40px;	
