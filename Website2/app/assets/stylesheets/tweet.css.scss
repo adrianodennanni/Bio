@@ -42,7 +42,7 @@ title2 {
 }
 
 a {
-  color:#369;
+  color:#FFFFFF;
   text-decoration:none;
 }
     
@@ -86,12 +86,11 @@ a {
 #content {
     position: absolute;
     top: 80px;
-    right: 0px;
-    bottom: 30px;
+    right: 5px;
+    bottom: 90px;
     width: 305px;
     background: rgb(255,255,255); /* old IE */
-    background: rgba(255,255,255,.9);
-    border-left: 1px solid #ccc;
+    background: rgba(250,255,250,.7);
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 2;
@@ -102,7 +101,7 @@ a {
 #sidebar{
   position: absolute;
   right: 3px;
-  bottom: 0px;
+  bottom: 5px;
   left: 3px;
   top: 0px;
   -webkit-overflow-scrolling:touch; /* iOS scrolling*/
@@ -116,7 +115,7 @@ a {
     position: absolute;
     z-index: 2;
     top: 30px;
-    right: 0px;
+    right: 5px;
     width: 305px;
     height: 40px;	
     background: #444;
@@ -125,15 +124,28 @@ a {
     padding-top: 10px;
 }
 
+#head_line {
+  position: absolute;
+  text-align: justify;
+  vertical-align: middle;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 3px;
+  background: #009900;
+  text-align: center;
+}
+
 #footer {
     position: absolute;
     text-align: justify;
     vertical-align: middle;
     bottom: 0px;
-    right: 305px;
+    right: 0px;
     left: 0px;
     height: 40px;
     text-align: center;
+    background: #009900;
 }
 
 #paginate {
