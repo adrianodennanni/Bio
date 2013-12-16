@@ -13,7 +13,7 @@ require 'logging'
 
 
 #Set the location of the config file
-APP_CONFIG = YAML.load_file("/home/joaohkfaria/Develop/Workspace/Bio/SocialStream/config.yml")
+APP_CONFIG = YAML.load_file("../config.yml")
 
 # Terms that will be used as parameters to filter tweets
 term1 = APP_CONFIG['TERM_1_TWITTER']
