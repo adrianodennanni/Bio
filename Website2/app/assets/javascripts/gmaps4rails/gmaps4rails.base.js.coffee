@@ -45,7 +45,7 @@ class @Gmaps4Rails
       auto_zoom: false         # zoom given by auto-adjust
       bounds: []              # adjust map to these limits. Should be [{"lat": , "lng": }]
       raw: {}                  # raw json to pass additional options
-
+      
     @default_markers_conf =
       #Marker config
       title: ""
@@ -79,7 +79,7 @@ class @Gmaps4Rails
       clickable: false
       zIndex: null
 
-  #tnitializes the map
+  #Initializes the map
   initialize : ->
     @serviceObject = @createMap()
     @map = @serviceObject #beware, soon deprecated
