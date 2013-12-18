@@ -90,11 +90,13 @@ a {
     bottom: 90px;
     width: 305px;
     background: rgb(255,255,255); /* old IE */
-    background: rgba(250,255,250,.9);
+    background: rgba(245,255,245,.9);
     overflow-x: hidden;
     overflow-y: hidden;
     z-index: 2;
     text-align: center;
+    border:1px solid;
+    border-color:#444
 
 }
 
@@ -116,7 +118,7 @@ a {
     z-index: 2;
     top: 50px;
     right: 0px;
-    width: 305px;
+    width: 307px;
     height: 40px;	
     background: #444;
     color: white;
