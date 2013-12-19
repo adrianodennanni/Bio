@@ -34,7 +34,7 @@ class TweetController < ApplicationController
     redirect_to :back
   end
   
-  #Private functions - Only use by this controller
+  #Private functions - Only used by this controller
   private
   def increaseVoteUp
     up_tweet = @twit.up_votes + 1

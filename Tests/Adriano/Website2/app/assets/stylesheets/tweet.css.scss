@@ -42,7 +42,7 @@ title2 {
 }
 
 a {
-  color:#FFFFFF;
+  color:#000000;
   text-decoration:none;
 }
     
@@ -148,6 +148,32 @@ a {
     height: 40px;
     text-align: center;
     background: #009900;
+}
+#searchbox{
+    position: absolute;
+    left: 40px;
+    top: 8px;
+    color: #000000;
+    height: 24px;
+}
+
+input[type=text]
+{
+    background-color: #177509;
+    height: 24px;
+    width: 190px;
+    -webkit-transition: all .25s ease-in-out;
+    border: 0px;
+    padding-left:3%;
+}
+
+input[type=submit]
+{
+    height: 24px;
+    width: 24px;
+    -webkit-transition: all .25s ease-in-out;
+    border: 0px;
+    background: url();
 }
 
 #logotipo{
