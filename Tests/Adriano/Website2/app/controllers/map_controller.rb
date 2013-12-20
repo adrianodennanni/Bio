@@ -4,7 +4,8 @@ class MapController < ApplicationController
     @latitude = Tweet.where("latitude != 0").last.latitude
     @longitude = Tweet.where("longitude != 0").last.longitude
     gon.latitude = @latitude
-    gon.longitude = @longitude 
+    gon.longitude = @longitude
+    @search=User.search(params[:search], :ranker => :proximity, :match_mode => :any)
   end
   
   def about  

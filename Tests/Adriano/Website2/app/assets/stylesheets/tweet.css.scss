@@ -126,6 +126,11 @@ a {
     padding-top: 10px;
 }
 
+#inside_text{
+  position: relative;
+  top: 0%
+}
+
 #head_line {
   position: absolute;
   text-align: justify;
@@ -153,7 +158,6 @@ a {
     position: absolute;
     left: 40px;
     top: 8px;
-    color: #000000;
     height: 24px;
 }
 
@@ -169,16 +173,27 @@ input[type=text]
 
 input[type=submit]
 {
-    height: 24px;
-    width: 24px;
+    height: 26px;
+    width: 26px;
     -webkit-transition: all .25s ease-in-out;
     border: 0px;
-    background: url();
+    font-family: FontAwesome;
+    background-color:rgb(30,60,255);
+}
+
+#input_bg{
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   z-index: 1;
+   overflow: hidden;
 }
 
 #logotipo{
     position: absolute;
-    top: 30px;
+    top: 10px;
     left: 20px;
     z-index: 2;
 }

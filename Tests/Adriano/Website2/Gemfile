@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', '0.3.12b5'
 
 
 # Gems used only for assets and not required
@@ -46,3 +46,4 @@ gem 'fancybox2-rails'
 gem 'will_paginate', '~> 3.0.5'
 gem 'gon', '3.0.5'
 gem 'jquery-ui-rails'
+gem 'thinking-sphinx', '3.0.2'
