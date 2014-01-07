@@ -45,15 +45,23 @@
 	
 		<div id="content">
 			<iframe src="tweets" width="100%" height="100%" frameBorder="0"></iframe>
-		</div>
-
-		<div id="footer">
 			<div id="searchbox">
 				<form>
-					<input type="text" placeholder="Procurar..."/>
+					<input type="text" placeholder="Filtrar..."/>
+					<div class="styled-select">
+						<select>
+						  <option value="username">Usuário</option>
+						  <option value="specie">Espécie</option>
+						  <option value="location">Localização</option>
+						</select>
+					</div>
+
 						<input type="submit" value="&#xf002;"/>
 				</form>
 			</div>
+		</div>
+
+		<div id="footer">
 			<div id="inside_text">
 				<a id="about" class="fancybox.iframe" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
 				<a id="statistics" class="fancybox.iframe" rel="group" href="estatisticas" title="Estatísticas"><title2>Estatísticas</title2></a>
