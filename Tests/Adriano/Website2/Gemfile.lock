@@ -63,6 +63,8 @@ GEM
       railties (>= 3.1.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    font-awesome-sass (4.0.2)
+      sass-rails (>= 3.1.1)
     gmaps4rails (1.5.6)
     gon (3.0.5)
       actionpack (>= 2.3.0)
@@ -162,6 +164,7 @@ DEPENDENCIES
   chatterbot
   coffee-rails (~> 3.2.1)
   fancybox2-rails
+  font-awesome-sass
   gmaps4rails
   gon (= 3.0.5)
   jquery-rails

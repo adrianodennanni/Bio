@@ -47,7 +47,9 @@
 			<iframe src="tweets" width="100%" height="100%" frameBorder="0"></iframe>
 			<div id="searchbox">
 				<form>
-					<input type="text" placeholder="Filtrar..."/>
+					<%= form_tag("/search", method: "get") do %>
+ 				 		<%= text_field_tag(:q, "Filtrar...") %>
+					<% end %>
 					<div class="styled-select">
 						<select>
 						  <option value="username">Usuário</option>
@@ -56,7 +58,9 @@
 						</select>
 					</div>
 
-						<input type="submit" value="&#xf002;"/>
+					<button type="submit" class="btnSrc">
+                		<i class="fa fa-search"></i>
+            		</button>
 				</form>
 			</div>
 		</div>
@@ -72,10 +76,13 @@
 			<a href="/">
 				<img src="logotipo.png" />
 			</a>
+			
+			
+            
 		</div>
 		
 		
-		<%= gmaps4rails(@json) %>
+	<%= gmaps4rails(@json) %>
 		
 		
 	</body>
