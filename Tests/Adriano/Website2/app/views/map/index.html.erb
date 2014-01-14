@@ -37,18 +37,16 @@
 	<body>
 		<div id="head_line"></div>
 		
-		<div id="header">
-			<div id="inside_text">
-				<title1>#biobr</title1>
-			</div>
+		<div id="box_header">
+
 		</div>
 	
 		<div id="content">
 			<iframe src="tweets" width="100%" height="100%" frameBorder="0"></iframe>
 			<div id="searchbox">
 				<form>
-					<%= form_tag("/search", method: "get") do %>
- 				 		<%= text_field_tag(:q, "Filtrar...") %>
+					<%= form_tag("/user", method: "get") do %>
+ 				 		<%= text_field_tag(:q, " Filtrar...") %>
 					<% end %>
 					<div class="styled-select">
 						<select>
@@ -66,10 +64,8 @@
 		</div>
 
 		<div id="footer">
-			<div id="inside_text">
 				<a id="about" class="fancybox.iframe" rel="group" href="sobre" title="Sobre"><title2>Sobre</title2></a>
 				<a id="statistics" class="fancybox.iframe" rel="group" href="estatisticas" title="Estatísticas"><title2>Estatísticas</title2></a>
-			</div>
 		</div>
 		
 		<div id="logotipo">

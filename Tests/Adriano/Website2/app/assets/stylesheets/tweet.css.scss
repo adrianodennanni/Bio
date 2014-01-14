@@ -85,7 +85,7 @@ a {
 
 #content {
     position: absolute;
-    top: 100px;
+    top: 90px;
     right: 0px;
     bottom: 90px;
     width: 305px;
@@ -105,13 +105,13 @@ a {
   right: 3px;
   bottom: 24px;
   left: 3px;
-  top: 0px;
+  top: 30px;
   -webkit-overflow-scrolling:touch; /* iOS scrolling*/
   overflow-x: auto;
   overflow-y: auto;
 }
 
-#header {
+#box_header {
     vertical-align: middle;
     display: table-cell;
     position: absolute;
@@ -119,16 +119,11 @@ a {
     top: 50px;
     right: 0px;
     width: 307px;
-    height: 40px;	
+    height: 30px;	
     background: #444;
     color: white;
     text-align: center;
     padding-top: 10px;
-}
-
-#inside_text{
-  position: relative;
-  top: 0%
 }
 
 #head_line {
@@ -157,8 +152,8 @@ a {
 #searchbox{
     position: absolute;
     left: 0px;
-    bottom: 0px;
-    height: 24px;
+    top: 0px;
+    height: 30px;
     width: 100%;
 }
 
@@ -167,11 +162,10 @@ input[type=text]
     position: absolute;
     left: 0px;
     background-color: #444;
-    height: 24px;
-    width: 160px;
+    height: 93%;
+    width: 183px;
     -webkit-transition: all .25s ease-in-out;
     border: 0px;
-    padding-left:3%;
 }
 
 .btnSrc
@@ -179,8 +173,8 @@ input[type=text]
     position: absolute;
     right: 0px;
     bottom: 0px;
-    height: 24px;
-    width: 24px;
+    height: 100%;
+    width: 30px;
     -webkit-transition: all .25s ease-in-out;
     border: 0px;
     font-family: FontAwesome;
@@ -192,10 +186,9 @@ input[type=text]
 
 .styled-select select {
    position: absolute;
-   left: 162px;
-   right: 22px;
-   top: -2px;
-   bottom: -2px;
+   right: 28px;
+   top: 0px;
+   height: 100%;
    background-color: #444;
    color: initial;
    border: 0;
