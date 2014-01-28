@@ -1,0 +1,378 @@
+{
+ "kind": "customsearch#search",
+ "url": {
+  "type": "application/json",
+  "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+ },
+ "queries": {
+  "nextPage": [
+   {
+    "title": "Google Custom Search - Antonio Mauro Saraiva",
+    "totalResults": "696000",
+    "searchTerms": "Antonio Mauro Saraiva",
+    "count": 10,
+    "startIndex": 11,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "015946578298538871421:gfvaptlgeas"
+   }
+  ],
+  "request": [
+   {
+    "title": "Google Custom Search - Antonio Mauro Saraiva",
+    "totalResults": "696000",
+    "searchTerms": "Antonio Mauro Saraiva",
+    "count": 10,
+    "startIndex": 1,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "015946578298538871421:gfvaptlgeas"
+   }
+  ]
+ },
+ "context": {
+  "title": "*"
+ },
+ "searchInformation": {
+  "searchTime": 0.204823,
+  "formattedSearchTime": "0,20",
+  "totalResults": "696000",
+  "formattedTotalResults": "696.000"
+ },
+ "items": [
+  {
+   "kind": "customsearch#result",
+   "title": "Antonio Mauro Saraiva | Facebook",
+   "htmlTitle": "\u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e | Facebook",
+   "link": "https://www.facebook.com/antoniomauro.saraiva",
+   "displayLink": "www.facebook.com",
+   "snippet": "Antonio Mauro Saraiva is on Facebook. Join Facebook to connect with Antonio \nMauro Saraiva and others you may know. Facebook gives people the power to ...",
+   "htmlSnippet": "\u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e is on Facebook. Join Facebook to connect with \u003cb\u003eAntonio\u003c/b\u003e \u003cbr\u003e\n\u003cb\u003eMauro Saraiva\u003c/b\u003e and others you may know. Facebook gives people the power to&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "cacheId": "I8b_tIJxLYIJ",
+   "formattedUrl": "https://www.facebook.com/antoniomauro.saraiva",
+   "htmlFormattedUrl": "https://www.facebook.com/\u003cb\u003eantoniomauro\u003c/b\u003e.\u003cb\u003esaraiva\u003c/b\u003e",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c22.22.280.280/s160x160/311407_107154682729401_2103092583_n.jpg"
+     }
+    ],
+    "person": [
+     {
+      "image": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/274773_100003046107660_1469561277_q.jpg",
+      "name": "Antonio Mauro Saraiva"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "128",
+      "height": "128",
+      "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT7SIMClrhcMHgkG1lZTPDPOw1opTYPpZYOiphgHEvO9audvzsInsjTegI"
+     }
+    ],
+    "metatags": [
+     {
+      "referrer": "default"
+     }
+    ],
+    "hcard": [
+     {
+      "fn": "Antonio Mauro Saraiva",
+      "photo": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/274773_100003046107660_1469561277_q.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Antonio Mauro Saraiva | Facebook",
+   "htmlTitle": "\u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e | Facebook",
+   "link": "http://pt-br.facebook.com/antoniomauro.saraiva",
+   "displayLink": "pt-br.facebook.com",
+   "snippet": "Antonio Mauro Saraiva está no Facebook. Participe do Facebook para se \nconectar com Antonio Mauro Saraiva e outros que você talvez conheça. O \nFacebook ...",
+   "htmlSnippet": "\u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e está no Facebook. Participe do Facebook para se \u003cbr\u003e\nconectar com \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e e outros que você talvez conheça. O \u003cbr\u003e\nFacebook&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "cacheId": "VBrTfPVSHPEJ",
+   "formattedUrl": "pt-br.facebook.com/antoniomauro.saraiva",
+   "htmlFormattedUrl": "pt-br.facebook.com/\u003cb\u003eantoniomauro\u003c/b\u003e.\u003cb\u003esaraiva\u003c/b\u003e",
+   "pagemap": {
+    "person": [
+     {
+      "image": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/274773_100003046107660_1469561277_q.jpg",
+      "name": "Antonio Mauro Saraiva"
+     }
+    ],
+    "metatags": [
+     {
+      "referrer": "default"
+     }
+    ],
+    "hcard": [
+     {
+      "fn": "Antonio Mauro Saraiva",
+      "photo": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/274773_100003046107660_1469561277_q.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Twitter / BartAelterman: Antonio Mauro Saraiva would ...",
+   "htmlTitle": "Twitter / BartAelterman: \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e would ...",
+   "link": "https://twitter.com/BartAelterman/status/394776782391345152",
+   "displayLink": "twitter.com",
+   "snippet": "Oct 28, 2013 ... Antonio Mauro Saraiva would like to set up a data quality interest group by the \nend of the conference. #tdwg. Reply; Retweet Retweeted; Delete ...",
+   "htmlSnippet": "Oct 28, 2013 \u003cb\u003e...\u003c/b\u003e \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e would like to set up a data quality interest group by the \u003cbr\u003e\nend of the conference. #tdwg. Reply; Retweet Retweeted; Delete&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "cacheId": "nz2xOcw0mj8J",
+   "formattedUrl": "https://twitter.com/BartAelterman/status/394776782391345152",
+   "htmlFormattedUrl": "https://twitter.com/BartAelterman/status/394776782391345152",
+   "pagemap": {
+    "metatags": [
+     {
+      "msapplication-tileimage": "//abs.twimg.com/favicons/win8-tile-144.png",
+      "msapplication-tilecolor": "#00aced",
+      "swift-page-name": "permalink"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Antonio Mauro Saraiva - Google+",
+   "htmlTitle": "\u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e - Google+",
+   "link": "https://plus.google.com/116156350203323117048",
+   "displayLink": "plus.google.com",
+   "snippet": "Antonio Mauro Saraiva hasn't shared anything on this page with you.",
+   "htmlSnippet": " ",
+   "cacheId": "X56zUSA3MlkJ",
+   "formattedUrl": "https://plus.google.com/116156350203323117048",
+   "htmlFormattedUrl": "https://plus.google.com/116156350203323117048",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "https://lh4.googleusercontent.com/-aopg18Fv5t4/AAAAAAAAAAI/AAAAAAAAAAA/Jywb-a2t3OM/s120-c/photo.jpg"
+     }
+    ],
+    "person": [
+     {
+      "name": "Antonio Mauro Saraiva",
+      "image": "//lh4.googleusercontent.com/-aopg18Fv5t4/AAAAAAAAAAI/AAAAAAAAAAA/Jywb-a2t3OM/photo.jpg",
+      "url": "https://plus.google.com/116156350203323117048"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "79",
+      "height": "79",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcShjCurMzS-NRDpLDvQ3QWQv3dRO5OMqnWZTmWgvFsMdEqbGHqY3X7EjA"
+     }
+    ],
+    "metatags": [
+     {
+      "referrer": "origin"
+     }
+    ],
+    "hcard": [
+     {
+      "fn": "Antonio Mauro Saraiva",
+      "url": "https://plus.google.com/116156350203323117048",
+      "photo": "//lh4.googleusercontent.com/-aopg18Fv5t4/AAAAAAAAAAI/AAAAAAAAAAA/Jywb-a2t3OM/photo.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "edson fregni antonio mauro saraiva engenharia do projeto logico ...",
+   "htmlTitle": "edson fregni \u003cb\u003eantonio mauro saraiva\u003c/b\u003e engenharia do projeto logico \u003cb\u003e...\u003c/b\u003e",
+   "link": "http://www.estantevirtual.com.br/q/edson-fregni-antonio-mauro-saraiva-engenharia-do-projeto-logico-digital",
+   "displayLink": "www.estantevirtual.com.br",
+   "snippet": "EDSON FREGNI ANTONIO MAURO SARAIVA ENGENHARIA DO PROJETO \nLOGICO DIGITAL na Estante Virtual, a maior rede de sebos online do Brasil.",
+   "htmlSnippet": "EDSON FREGNI \u003cb\u003eANTONIO MAURO SARAIVA\u003c/b\u003e ENGENHARIA DO PROJETO \u003cbr\u003e\nLOGICO DIGITAL na Estante Virtual, a maior rede de sebos online do Brasil.",
+   "cacheId": "xZeOA5GSyjQJ",
+   "formattedUrl": "www.estantevirtual.com.br/.../edson-fregni-antonio-mauro-saraiva- engenharia-do-projeto-logico-digital",
+   "htmlFormattedUrl": "www.estantevirtual.com.br/.../edson-fregni-\u003cb\u003eantonio\u003c/b\u003e-\u003cb\u003emauro\u003c/b\u003e-\u003cb\u003esaraiva\u003c/b\u003e- engenharia-do-projeto-logico-digital",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://static.estantevirtual.com.br/imagens/avatar_estante_virtual_facebook.jpg"
+     }
+    ],
+    "metatags": [
+     {
+      "og:title": "Estante Virtual",
+      "og:url": "http://www.estantevirtual.com.br",
+      "og:image": "http://static.estantevirtual.com.br/imagens/avatar_estante_virtual_facebook.jpg",
+      "og:site_name": "Estante Virtual",
+      "og:description": "Compre livros seminovos e usados no maior acervo do Brasil.",
+      "y_key": "c26ef8e7f242b1a8"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Antonio Mauro Saraiva (University of São Paulo) - newsle",
+   "htmlTitle": "\u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e (University of São Paulo) - newsle",
+   "link": "http://newsle.com/person/antoniomaurosaraiva/36080918",
+   "displayLink": "newsle.com",
+   "snippet": "Join Newsle and see news about Antonio Mauro Saraiva. It's free! As a Newsle \nmember, you'll be able to: See all news articles that mention Antonio Mauro ...",
+   "htmlSnippet": "Join Newsle and see news about \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e. It&#39;s free! As a Newsle \u003cbr\u003e\nmember, you&#39;ll be able to: See all news articles that mention Antonio Mauro&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "cacheId": "OHX3XYe5TIoJ",
+   "formattedUrl": "newsle.com/person/antoniomaurosaraiva/36080918",
+   "htmlFormattedUrl": "newsle.com/person/\u003cb\u003eantoniomaurosaraiva\u003c/b\u003e/36080918",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://newsle.com/fbprofpic/100003046107660/picture?type=large"
+     }
+    ],
+    "person": [
+     {
+      "name": "Antonio Mauro Saraiva",
+      "description": "Antonio Mauro Saraiva in the news. Works at University of São Paulo",
+      "url": "http://newsle.com/person/antoniomaurosaraiva/36080918",
+      "givenname": "Antonio Mauro",
+      "familyname": "Saraiva",
+      "image": "http://newsle.com/fbprofpic/100003046107660/picture?type=large"
+     }
+    ],
+    "metatags": [
+     {
+      "fb:app_id": "115163611859335",
+      "og:site_name": "Newsle",
+      "og:type": "profile",
+      "og:title": "Antonio Mauro Saraiva",
+      "og:url": "http://newsle.com/person/antoniomaurosaraiva/36080918",
+      "og:description": "News about Antonio Mauro Saraiva. Get alerts when Antonio Mauro makes the news. Works at University of São Paulo",
+      "profile:first_name": "Antonio Mauro",
+      "profile:last_name": "Saraiva",
+      "og:image": "http://newsle.com/fbprofpic/100003046107660/picture?type=large"
+     }
+    ],
+    "hcard": [
+     {
+      "fn": "Antonio Mauro Saraiva",
+      "url": "http://newsle.com/person/antoniomaurosaraiva/36080918",
+      "photo": "http://newsle.com/fbprofpic/100003046107660/picture?type=large"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Travessa.com.br: Livro - Antonio Mauro Saraiva - Livraria da Travessa",
+   "htmlTitle": "Travessa.com.br: Livro - \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e - Livraria da Travessa",
+   "link": "http://www.travessa.com.br/Antonio_Mauro_Saraiva/autor/460F3A80-22D3-4A4B-BAF8-7F4A999B4E83",
+   "displayLink": "www.travessa.com.br",
+   "snippet": "Este livro é o resultado de pesquisas promovidas pelo Instituto de Estudos \nAvançados da USP, cujo objetivo do estudo era conhecer a situação dos ...",
+   "htmlSnippet": "Este livro é o resultado de pesquisas promovidas pelo Instituto de Estudos \u003cbr\u003e\nAvançados da USP, cujo objetivo do estudo era conhecer a situação dos&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "cacheId": "PkUpQd6uZtYJ",
+   "formattedUrl": "www.travessa.com.br/Antonio_Mauro_Saraiva/.../460F3A80-22D3-4A4B- BAF8-7F4A999B4E83",
+   "htmlFormattedUrl": "www.travessa.com.br/\u003cb\u003eAntonio\u003c/b\u003e_\u003cb\u003eMauro\u003c/b\u003e_\u003cb\u003eSaraiva\u003c/b\u003e/.../460F3A80-22D3-4A4B- BAF8-7F4A999B4E83",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://img.travessa.com.br/livro/PQ/32/32f3583d-5e75-480f-94cb-fef8fc7ab34a.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "62",
+      "height": "100",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSyOswE97GzAJPWbQVB5hWnbLOAlqeqGMU-6Y1pzkOxKi_N2yVz_w0MMA"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Engenharia do projeto lógico digital - Edson Fregni, Antonio Mauro ...",
+   "htmlTitle": "Engenharia do projeto lógico digital - Edson Fregni, \u003cb\u003eAntonio Mauro\u003c/b\u003e \u003cb\u003e...\u003c/b\u003e",
+   "link": "http://books.google.com/books/about/Engenharia_do_projeto_l%C3%B3gico_digital.html?id=bfmnkgEACAAJ",
+   "displayLink": "books.google.com",
+   "snippet": "... Antonio Mauro Saraiva. Edgard Blucher - 498 pages. 0 Reviewshttp://books.\ngoogle.com/books/about/Engenharia_do_projeto_l%C3%B3gico_digital.html?id\n= ...",
+   "htmlSnippet": "\u003cb\u003e...\u003c/b\u003e \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e. Edgard Blucher - 498 pages. 0 Reviewshttp://books.\u003cbr\u003e\ngoogle.com/books/about/Engenharia_do_projeto_l%C3%B3gico_digital.html?id\u003cbr\u003e\n=&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "formattedUrl": "books.google.com/books/.../Engenharia_do_projeto_lógico_digital.html?id...",
+   "htmlFormattedUrl": "books.google.com/books/.../Engenharia_do_projeto_lógico_digital.html?id...",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://books.google.com/books?id=bfmnkgEACAAJ&printsec=frontcover&img=1&zoom=1"
+     }
+    ],
+    "book": [
+     {
+      "description": "books.google.com",
+      "url": "http://books.google.com/books/about/Engenharia_do_projeto_l%C3%B3gico_digital.html?id=bfmnkgEACAAJ&utm_source=gb-gplus-share",
+      "name": "Engenharia do projeto lógico digital",
+      "image": "http://books.google.com/books?id=bfmnkgEACAAJ&printsec=frontcover&img=1&zoom=1"
+     }
+    ],
+    "metatags": [
+     {
+      "og:url": "http://books.google.com/books/about/Engenharia_do_projeto_l%C3%B3gico_digital.html?id=bfmnkgEACAAJ",
+      "title": "Engenharia do projeto lógico digital",
+      "og:title": "Engenharia do projeto lógico digital",
+      "og:type": "book",
+      "og:site_name": "Google Books",
+      "og:image": "http://books.google.com/books?id=bfmnkgEACAAJ&printsec=frontcover&img=1&zoom=1"
+     }
+    ],
+    "hproduct": [
+     {
+      "fn": "Engenharia do projeto lógico digital"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Improving species distribution models using biotic interactions: a ...",
+   "htmlTitle": "Improving species distribution models using biotic interactions: a \u003cb\u003e...\u003c/b\u003e",
+   "link": "http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2012.07191.x/abstract",
+   "displayLink": "onlinelibrary.wiley.com",
+   "snippet": "Nov 19, 2012 ... Tereza Cristina Giannini,; Daniel S. Chapman,; Antonio Mauro Saraiva,; Isabel \nAlves-dos-Santos,; Jacobus C. Biesmeijer. Article first published ...",
+   "htmlSnippet": "Nov 19, 2012 \u003cb\u003e...\u003c/b\u003e Tereza Cristina Giannini,; Daniel S. Chapman,; \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e,; Isabel \u003cbr\u003e\nAlves-dos-Santos,; Jacobus C. Biesmeijer. Article first published&nbsp;\u003cb\u003e...\u003c/b\u003e",
+   "formattedUrl": "onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2012.07191.../abstract",
+   "htmlFormattedUrl": "onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2012.07191.../abstract",
+   "pagemap": {
+    "metatags": [
+     {
+      "article_references": "Giannini, Tereza Cristina,Chapman, Daniel S.,Saraiva, Antonio Mauro,Alves‐dos‐Santos, Isabel,Biesmeijer, Jacobus C.,2013,Improving species distribution models using biotic interactions: a case study of parasites, pollinators and plants,Ecography,36:649-656,doi:10.1111/j.1600-0587.2012.07191.x.",
+      "citation_abstract_html_url": "http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2012.07191.x/abstract",
+      "citation_author": "Giannini, Tereza Cristina",
+      "citation_author_institution": "Bioscience Inst., Univ. of São Paulo, R. do Matão, 321, BR‐05508‐900, São Paulo, Brazil.",
+      "citation_doi": "10.1111/j.1600-0587.2012.07191.x",
+      "citation_firstpage": "649",
+      "citation_fulltext_html_url": "http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2012.07191.x/full",
+      "citation_issn": "1600-0587",
+      "citation_issue": "6",
+      "citation_journal_title": "Ecography",
+      "citation_language": "en",
+      "citation_lastpage": "656",
+      "citation_online_date": "2012/11/19",
+      "citation_pdf_url": "http://onlinelibrary.wiley.com/doi/10.1111/j.1600-0587.2012.07191.x/pdf",
+      "citation_publication_date": "2013/06/01",
+      "citation_publisher": "Blackwell Publishing Ltd",
+      "citation_title": "Improving species distribution models using biotic interactions: a case study of parasites, pollinators and plants",
+      "citation_volume": "36"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Buscando livros por: Autor Edson Fregni Antonio Mauro Saraiva ...",
+   "htmlTitle": "Buscando livros por: Autor Edson Fregni \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e \u003cb\u003e...\u003c/b\u003e",
+   "link": "http://www.livronauta.com.br/BookSearch.html?tipo=autor&valor=Edson+Fregni+Antonio+Mauro+Saraiva",
+   "displayLink": "www.livronauta.com.br",
+   "snippet": "Buscando livros por: Autor Edson Fregni Antonio Mauro Saraiva - Página 1 de 1.",
+   "htmlSnippet": "Buscando livros por: Autor Edson Fregni \u003cb\u003eAntonio Mauro Saraiva\u003c/b\u003e - Página 1 de 1.",
+   "cacheId": "Lx99dEaX7e8J",
+   "formattedUrl": "www.livronauta.com.br/BookSearch.html?...Antonio+Mauro+Saraiva",
+   "htmlFormattedUrl": "www.livronauta.com.br/BookSearch.html?...\u003cb\u003eAntonio\u003c/b\u003e+\u003cb\u003eMauro\u003c/b\u003e+\u003cb\u003eSaraiva\u003c/b\u003e"
+  }
+ ]
+}
