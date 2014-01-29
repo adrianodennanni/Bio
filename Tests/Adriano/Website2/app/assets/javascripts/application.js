@@ -15,3 +15,4 @@
 //= require_tree .
 //= require fancybox
 //= require jquery.ui.all
+//= require ajax_pagination

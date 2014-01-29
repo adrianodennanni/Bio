@@ -17,7 +17,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
+gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
@@ -41,10 +41,9 @@ gem 'gmaps4rails'
 gem 'twitter'
 gem 'tweetstream'
 gem 'chatterbot'
-gem 'jquery-rails'
 gem 'fancybox2-rails'
-gem 'will_paginate', '~> 3.0.5'
+gem 'kaminari'
 gem 'gon', '3.0.5'
 gem 'jquery-ui-rails'
-gem 'thinking-sphinx', '3.0.2'
-gem 'font-awesome-sass'
+gem 'ajax_pagination'
+gem 'jquery-historyjs'

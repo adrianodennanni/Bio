@@ -5,31 +5,20 @@ class MapController < ApplicationController
     @longitude = Tweet.where("longitude != 0").last.longitude
     gon.latitude = @latitude
     gon.longitude = @longitude
-    @search=User.search(params[:search], :ranker => :proximity, :match_mode => :any)
+    @tweets = Tweet.order('id_tweet DESC').page(params[:page]).per(5)
+    # Only load tweets with localization
+    @tweets = @tweets.where('latitude!=0 || longitude!=0')
+    #Ajax rendering for the Tweets
+    respond_to do |format|
+      format.html # index.html.erb
+      ajax_respond format, :section_id => "page"
+    end
   end
   
   def about  
   end
   
-  
   def statistics
   end
 
-  def infobox
-    gon.username=User.username
-    gon.tweetid=Tweet.id_tweet
-  end
-  
- 
-  def tweets
-    @tweets = Tweet.order('id_tweet DESC').paginate(page: params[:page] , :per_page => 5)
-    # Only load tweets with localization
-    @tweets = @tweets.where('latitude!=0 || longitude!=0')
-  end
-  
-  def _tweets
-    @tweets = Tweet.order('id_tweet DESC').paginate(page: params[:page] , :per_page => 5)
-    # Only load tweets with localization
-    @tweets = @tweets.where('latitude!=0 || longitude!=0')
-  end
 end
