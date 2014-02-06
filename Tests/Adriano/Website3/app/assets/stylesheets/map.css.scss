@@ -118,7 +118,7 @@ a {
     top: 30px;
     right: 0px;
     width: 307px;
-    height: 30px;	
+    height: 30px; 
     background: #444;
     color: white;
     text-align: center;
@@ -184,7 +184,7 @@ input[type=text]
 {
     position: absolute;
     left: 0px;
-    background-color: #444;
+    background-color: #009900;
     height: 93%;
     width: 183px;
     -webkit-transition: all .25s ease-in-out;
@@ -215,6 +215,14 @@ input[type=text]
     font-family: FontAwesome;
     color: white;
     background-color: #444;
+}
+
+#map{
+position: absolute;
+    bottom: 40px;
+    right: 0px;
+    top: 3px;
+    left: 0px;
 }
 
 /*Custom select dropdown*/

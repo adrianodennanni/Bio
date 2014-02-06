@@ -44,7 +44,7 @@
 			$(document).ready(function(){
 				$("#box_header_m").hide();
 				
-			$("#box_header").click(function(){
+			$("#rtr_left_div").click(function(){
 						 $("#side_panel").toggle("slide");
 						 $("#box_header_m").toggle("slide");
 				});
@@ -64,7 +64,39 @@
 			<i class="fa fa-angle-double-left fa-2x"></i>
 		</div>
 		
-		<%= render "tweets" %>
+<div id="side_panel">
+			<div id="box_header">
+				<div id="rtr_left_div">
+					<i class="fa fa-angle-double-right fa-2x"></i>
+				</div>
+			</div>
+			<div id="content">
+				<div id="sidebar">
+  				  <%= render "tweets" %>				
+					<div id="paginate">
+						<%= paginate @tweets %>
+					</div>
+				<br/>
+				</div>
+				<div id="searchbox">
+					<div class="styled-select">
+						
+						
+						
+						<%= search_form_for @q do |f| %>
+							<%= f.text_field :text_cont, :value => 'Filtrar...' %>
+							<%= f.submit "Src",:class => "btnSrc"%>
+						<% end %>
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
 		
 		<div id="footer">
 			<a id="about" class="fancybox.iframe" rel="group" href="sobre" title="Sobre">
