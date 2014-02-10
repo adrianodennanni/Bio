@@ -1,13 +1,13 @@
 <div id="statistics">
 		<title1>Geral</title1>
-		<p><b>Número de Tweets (Incluindo não-geolocalizados):</b> <%= Tweet.all.count %></p>
+		<p><b>Quantidade tweets:</b> <%= Tweet.all.count %></p>
 		<p><b>Último Tweet Postado Em:</b> <%= Tweet.all.last.date_tweet.strftime('%d/%m/%Y às %Hh%M') %></p>
 		<title1>Uso de Hashtag</title1>
-		<p><b>#FaunaUSP:</b> <%= Tweet.select('text').where('text like ?',"%#faunausp%").all.count %></p>
-		<p><b>#FloraUSP:</b> <%= Tweet.select('text').where('text like ?',"%#florausp%").all.count %></p>
-		<p><b>#BioUSP:</b> <%= Tweet.select('text').where('text like ?',"%#biousp%").all.count %></p>
-		<p><b>#BioBR:</b> <%= Tweet.select('text').where('text like ?',"%#biobr%").all.count %></p>
-		<p><b>#FloraBR:</b> <%= Tweet.select('text').where('text like ?',"%#florabr%").all.count %></p>
-		<p><b>#FaunaBR:</b> <%= Tweet.select('text').where('text like ?',"%#faunabr%").all.count %></p>
-		<p><b>#WorldBio:</b> <%= Tweet.select('text').where('text like ?',"%#worldbio%").all.count %></p>
+		<p><b>#FaunaUSP:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#faunausp%").all.count %></p>
+		<p><b>#FloraUSP:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#florausp%").all.count %></p>
+		<p><b>#BioUSP:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#biousp%").all.count %></p>
+		<p><b>#BioBR:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#biobr%").all.count %></p>
+		<p><b>#FloraBR:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#florabr%").all.count %></p>
+		<p><b>#FaunaBR:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#faunabr%").all.count %></p>
+		<p><b>#WorldBio:</b> <%= Tweet.where("longitude != 0").where("latitude != 0").select('text').where('text like ?',"%#worldbio%").all.count %></p>
 </div>

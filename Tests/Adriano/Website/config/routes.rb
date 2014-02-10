@@ -4,6 +4,7 @@ Gmapstest02::Application.routes.draw do
   get "map/about"
 
   get "map/statistics"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -64,6 +65,7 @@ Gmapstest02::Application.routes.draw do
   root :to => 'map#index'
   match '/sobre' => 'map#about'
   match '/estatisticas' => 'map#statistics'
-  match '/tweets' => 'map#tweets'
   resources :tweet
+  match '/tweets' => 'map#index'
+  
 end
