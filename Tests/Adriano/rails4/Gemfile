@@ -32,12 +32,9 @@ group :doc do
 end
 
 gem 'gmaps4rails'
-gem 'twitter'
-gem 'tweetstream'
-gem 'chatterbot'
+gem 'geocoder'
 gem 'fancybox2-rails'
 gem 'kaminari'
-gem 'gon'
 gem 'jquery-ui-rails'
 gem 'jquery-historyjs'
 gem "ransack", github: "activerecord-hackery/ransack"

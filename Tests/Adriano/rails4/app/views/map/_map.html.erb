@@ -1,0 +1,29 @@
+<div id="map"></div>
+<script type="text/javascript">
+	var mapOptions = {
+		center: new google.maps.LatLng(<%= @latitude %>, <%= @longitude %>),
+		
+		zoom: 14,
+		
+		panControlOptions: {
+        	position: google.maps.ControlPosition.LEFT_CENTER
+    	},
+    	
+    	zoomControlOptions: {
+        	style: google.maps.ZoomControlStyle.LARGE,
+        	position: google.maps.ControlPosition.LEFT_CENTER
+    	},
+    	
+    	scaleControl: true,
+    	scaleControlOptions: {
+        	position: google.maps.ControlPosition.BOTTOM_LEFT
+    	},
+    	
+    	
+
+	};
+  	handler = Gmaps.build('Google');
+  	handler.buildMap( {provider: mapOptions, internal: {id: 'map'}}, function(){
+    	markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  	});
+</script>

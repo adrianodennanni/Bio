@@ -60,6 +60,7 @@ Rails4::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
   resources :map
   root :to => 'map#index'
   match '/sobre' => 'map#about', via: [:get, :post]

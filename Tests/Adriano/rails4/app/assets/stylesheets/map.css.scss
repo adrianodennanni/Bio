@@ -229,13 +229,13 @@ input[type=text]
    position: absolute;
    left: 0px;
    top: 3px;
-   bottom: 0px;
-    right: 0px;
+   bottom: 40px;
+   right: 0px;
    
 }
 /*Custom select dropdown*/
 
-.styled-select select {
+.select_box {
    position: absolute;
    right: 28px;
    top: 0px;
