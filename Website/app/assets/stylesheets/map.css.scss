@@ -42,7 +42,7 @@ title2 {
 }
 
 a {
-  color:#000000;
+  color:#FFFFFF;
   text-decoration:none;
 }
     
@@ -157,7 +157,8 @@ a {
   right: 0px;
   left: 0px;
   height: 3px;
-  background: #009900;
+  background: #003300;
+  color: white;
   text-align: center;
 }
 
@@ -170,7 +171,7 @@ a {
     left: 0px;
     height: 40px;
     text-align: center;
-    background: #009900;
+    background: #003300;
 }
 #searchbox{
     position: absolute;
@@ -183,12 +184,14 @@ a {
 input[type=text]
 {
     position: absolute;
-    left: 0px;
-    background-color: #009900;
+    left: -2px;
+    width: 277px;
+    background-color: #003300;
     height: 93%;
-    width: 183px;
     -webkit-transition: all .25s ease-in-out;
     border: 0px;
+    color: #FFFFFF;
+    padding-left: 10px;
 }
 
 .btnSrc
