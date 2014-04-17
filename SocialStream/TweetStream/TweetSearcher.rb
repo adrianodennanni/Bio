@@ -9,8 +9,6 @@ require "yaml"
 require "mysql2"
 require 'rubygems'
 require 'chatterbot/dsl'
-require 'logging'
-
 
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
@@ -39,11 +37,6 @@ TweetStream.configure do |config|
 end
 
 connection = Mysql2::Client.new(:host => host, :username => user, :password => pass, :database => database)
-
-
-logger = Logging.logger('Log/Output.log')
-logger.level = :info
-logger.info "Initializing Tweet Searcher"
 
 puts "Starting"
 
