@@ -19,10 +19,11 @@
         	position: google.maps.ControlPosition.BOTTOM_LEFT
     	},
     	
-    	
+		randomize: true,
+      	max_random_distance: 1,
 
 	};
-  	handler = Gmaps.build('Google');
+  	handler = Gmaps.build('Google', { markers: { maxRandomDistance: 1 } });
   	handler.buildMap( {provider: mapOptions, internal: {id: 'map'}}, function(){
     	markers = handler.addMarkers(<%=raw @hash.to_json %>);
   	});

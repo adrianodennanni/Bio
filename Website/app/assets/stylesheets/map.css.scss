@@ -102,12 +102,20 @@ a {
 #sidebar{
   position: absolute;
   right: 3px;
-  bottom: 0px;
+  bottom: 20px;
   left: 3px;
   top: 30px;
   -webkit-overflow-scrolling:touch; /* iOS scrolling*/
   overflow-x: auto;
   overflow-y: auto;
+}
+
+#paginate{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #444;
 }
 
 #box_header {
@@ -148,7 +156,6 @@ a {
 
 }
 
-
 #head_line {
   position: absolute;
   text-align: justify;
@@ -157,7 +164,7 @@ a {
   right: 0px;
   left: 0px;
   height: 3px;
-  background: #003300;
+  background: #000000;
   color: white;
   text-align: center;
 }
@@ -171,7 +178,7 @@ a {
     left: 0px;
     height: 40px;
     text-align: center;
-    background: #003300;
+    background: #000000;
 }
 #searchbox{
     position: absolute;
@@ -186,7 +193,7 @@ input[type=text]
     position: absolute;
     left: -2px;
     width: 277px;
-    background-color: #003300;
+    background-color: #000000;
     height: 93%;
     -webkit-transition: all .25s ease-in-out;
     border: 0px;
@@ -227,6 +234,15 @@ input[type=text]
     height: 100%;
 }
 
+#map
+{
+   position: absolute;
+   left: 0px;
+   top: 3px;
+   bottom: 40px;
+   right: 0px;
+   
+}
 /*Custom select dropdown*/
 
 .styled-select select {

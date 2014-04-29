@@ -76,27 +76,22 @@
 			<div id="content">
 				<div id="sidebar">
   				  <%= render "tweets" %>				
-					<div id="paginate">
-						<%= paginate @tweets %>
-					</div>
 				<br/>
 				</div>
 				<div id="searchbox">
 					<div class="styled-select">
-						
-						
-						
+				
 						<%= search_form_for @q do |f| %>
-							<%= f.text_field :text_cont, :value => 'Filtrar...' %>
-							<%= f.submit "Src",:class => "btnSrc"%>
-						<% end %>
-						
-						
-						
-						
-						
-						
+							
+								<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
+								<button type="submit" class="btnSrc" >
+									<i class="fa fa-search"></i>
+								</button>
+							<% end %>				
 					</div>
+				</div>
+				<div id="paginate">
+					<%= paginate @tweets %>
 				</div>
 			</div>
 		</div>
@@ -111,7 +106,7 @@
 		</div>
 		<div id="logotipo">
 			<a href="/">
-			<img src="logotipo.png" />
+			<img src="logotipo.png" width="165" height="80"/>
 			</a>
 		</div>
 		
