@@ -4,6 +4,7 @@
 
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Raleway|Open+Sans:700,300|Trykker);
+@import "bootstrap";
 
 body {
   font-family:"Raleway";
@@ -115,7 +116,9 @@ a {
     bottom: 0px;
     left: 0px;
     right: 0px;
+    //height: 22px;
     background: #444;
+    vertical-align: middle;
 }
 
 #box_header {
