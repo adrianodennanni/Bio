@@ -13,34 +13,34 @@
 								</div>
 								<% if (session[tweet.id] == 'select_up') %>
 								<div id="vote_up">
-									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'unselectUp' do %>
+									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'unselectUp', :remote => true do %>
 									<img id="vote_buttons" src="like_active.png">
 									<% end %>
 								</div>
 								<div id="vote_down">
-									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'down' do %>
+									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'down', :remote => true do %>
 									<img id="vote_buttons" src="dislike_disactive.png">
 									<% end %>
 								</div>
 								<% elsif (session[tweet.id] == 'select_down') %>
 								<div id="vote_up">
-									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'up' do %>
+									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'up', :remote => true do %>
 									<img id="vote_buttons" src="like_disactive.png">
 									<% end %>
 								</div>
 								<div id="vote_down">
-									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'unselectDown' do %>
+									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'unselectDown', :remote => true do %>
 									<img id="vote_buttons" src="dislike_active.png">
 									<% end %>
 								</div>
 								<% else %>
 								<div id="vote_up">
-									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'up' do %>
+									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'up', :remote => true do %>
 									<img id="vote_buttons" src="like_disactive.png">
 									<% end %>
 								</div>
 								<div id="vote_down">
-									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'down' do %>
+									<%= link_to :controller => "tweet", :id_tweet => tweet.id, :vote => 'down', :remote => true do %>
 									<img id="vote_buttons" src="dislike_disactive.png">
 									<% end %>
 								</div>
