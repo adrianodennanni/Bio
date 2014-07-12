@@ -1,0 +1,2 @@
+$('#sidebar').html('<%= escape_javascript render(@tweets) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@tweets, :remote => true).to_s) %>');

@@ -75,12 +75,12 @@
 			</div>
 			<div id="content">
 				<div id="sidebar">
-  				  <%= render "tweets" %>				
+  				  		<%= render @tweets %>			
 				<br/>
 				</div>
 				<div id="searchbox">
 					<div class="styled-select">
-						<%= search_form_for @q do |f| %>
+						<%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>
 							
 								<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
 								<button type="submit" class="btnSrc" >
@@ -89,8 +89,8 @@
 							<% end %>				
 					</div>
 				</div>
-				<div id="paginate">
-					<%= paginate @tweets %>
+				<div id="paginator">				
+					<%= paginate @tweets , :remote => true %>					
 				</div>
 			</div>
 		</div>

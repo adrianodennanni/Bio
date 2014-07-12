@@ -1,13 +1,4 @@
-<div id="side_panel">
-			<div id="box_header">
-				<div id="rtr_left_div">
-					<i class="fa fa-angle-double-right fa-2x"></i>
-				</div>
-			</div>
-			<div id="content">
-				<div id="sidebar">
-  				  					<!-- It will show only the geolocalizated tweets!! -->
-						<% @tweets.each do |tweet| %>
+					<!-- It will show only the geolocalizated tweets!! -->
 							<% user = User.find_by_id_user(tweet.id_user) %>
 								<div id="image"><a target="_blank" href="https://twitter.com/<%= user.username %>"><img src="<%= user.profile_image %>" /></a></div>
 								<div id="name">
@@ -55,22 +46,3 @@
 								</div>
 							<% end %>
 							<hr />
-						<% end %>			
-				<br/>
-				</div>
-				<div id="searchbox">
-					<div class="styled-select">
-						<%= search_form_for @q, :remote=>"true", url: "tweets", :method => :get do |f| %>
-							
-								<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
-								<button type="submit" class="btnSrc" >
-									<i class="fa fa-search"></i>
-								</button>
-							<% end %>				
-					</div>
-				</div>
-				<div id="paginate">
-					<%= paginate @tweets, :remote => true %>
-				</div>
-			</div>
-		</div>
