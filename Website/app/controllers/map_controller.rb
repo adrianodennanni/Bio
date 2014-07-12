@@ -4,10 +4,7 @@ class MapController < ApplicationController
     
     @json = Tweet.all.where('latitude!=0 || longitude!=0')
     
-    
-    
- 
-    
+        
     @hash = Gmaps4rails.build_markers(@json) do |json, marker|
       # marker recebe alguns parametros para cada marcador
       user=User.find(json.id_user)
