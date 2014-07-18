@@ -4,9 +4,8 @@ class MapController < ApplicationController
     
     
     @q = Tweet.order('id_tweet DESC').where('latitude!=0 || longitude!=0').search(params[:q])
-    @latitude = Tweet.where("latitude != 0").last.latitude
-    @longitude = Tweet.where("longitude != 0").last.longitude
     @tweets = @q.result(distinct: true).page(params[:page]).per(5)
+
     
     @json = @tweets
             
@@ -18,8 +17,52 @@ class MapController < ApplicationController
       marker.lng json.longitude
       marker.infowindow infowindow_content
       
+      if (json.text.downcase =~ /#florausp(.*)/)
+        marker.picture ({
+          url: "arbol_cyan.png",
+          width:  32,
+          height: 37
+        })
+      elsif (json.text.downcase =~ /#faunausp(.*)/)
+        marker.picture ({
+          url: "frog-2_cyan.png",
+          width:  32,
+          height: 37
+        })
+      elsif (json.text.downcase =~ /#biousp(.*)/)
+        marker.picture ({
+          url: "flowers_cyan.png",
+          width:  32,
+          height: 37
+        })        
+      elsif (json.text.downcase =~ /#florabr(.*)/)
+        marker.picture ({
+          url: "arbol_green.png",
+          width:  32,
+          height: 37
+        })
+      elsif (json.text.downcase =~ /#faunabr(.*)/)
+        marker.picture ({
+          url: "frog-2_green.png",
+          width:  32,
+          height: 37
+        })
+      elsif (json.text.downcase =~ /#biobr(.*)/)
+        marker.picture ({
+          url: "flowers_green.png",
+          width:  32,
+          height: 37
+        })        
+      elsif (json.text.downcase =~ /#worldbio(.*)/)
+        marker.picture ({
+          url: "flowers_blue.png",
+          width:  32,
+          height: 37
+        })
+      end      
     end
     
+    @latitude = @json.where("latitude != 0").first.latitude
+    @longitude = @json.where("longitude != 0").first.longitude
   end
-  
 end
