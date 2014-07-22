@@ -1,17 +1,16 @@
 <%= paginator.render do -%>
-  <div class="pagination">
-    <ul>
-      <%= first_page_tag unless current_page.first? %>
-      <%= prev_page_tag unless current_page.first? %>
-      <% each_page do |page| -%>
-        <% if page.left_outer? || page.right_outer? || page.inside_window? -%>
-          <%= page_tag page %>
-        <% elsif !page.was_truncated? -%>
-          <%= gap_tag %>
-        <% end -%>
-      <% end -%>
-      <%= next_page_tag unless current_page.last? %>
-      <%= last_page_tag unless current_page.last? %>
-    </ul>
-  </div>
+	<div id="paginator">
+		<div id="sub_paginator">
+			<div class="btn-group">
+			  <%= first_page_tag %>	    		      
+		      <%= prev_page_tag %>
+		      <label class="btn btn-primary btn-lg" disabled="disabled">
+		      <%= current_page %> de <%= num_pages %>
+		      </label>
+		      <%= next_page_tag %> 
+		      <%= last_page_tag %>
+		    </div>
+		</div>
+	</div>
 <% end -%>
+

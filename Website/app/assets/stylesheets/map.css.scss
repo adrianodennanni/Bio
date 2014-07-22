@@ -103,7 +103,7 @@ a {
 #sidebar{
   position: absolute;
   right: 3px;
-  bottom: 20px;
+  bottom: 80px;
   left: 3px;
   top: 30px;
   -webkit-overflow-scrolling:touch; /* iOS scrolling*/
@@ -116,9 +116,16 @@ a {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    //height: 22px;
-    background: #444;
+    height: 68px;
+    background: #58667a;
     vertical-align: middle;
+}
+
+#sub_paginator{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 12px;
 }
 
 #box_header {
@@ -128,9 +135,9 @@ a {
     z-index: 2;
     top: 30px;
     right: 0px;
-    width: 307px;
+    width: 305px;
     height: 30px; 
-    background: #444;
+    background: #58667a;
     color: white;
     text-align: center;
 }

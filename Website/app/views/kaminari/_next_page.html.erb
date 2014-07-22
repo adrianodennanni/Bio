@@ -1,1 +1,5 @@
-  <%= link_to_unless current_page.last?, raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote %>
+<% if not (current_page.last?)  %>
+	<%= link_to raw(t 'views.pagination.next'), url, {:rel => 'next', :remote => remote, :class => "btn btn-primary btn-lg"} %>
+<% else %>
+	<%= link_to raw(t 'views.pagination.next'), url, {:rel => 'next', :remote => remote, :class => "btn btn-primary btn-lg", :disabled => "disabled"} %>
+<% end %>
