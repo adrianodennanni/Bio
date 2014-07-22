@@ -1,3 +1,7 @@
-$('#sidebar').html('<%= escape_javascript render(@tweets) %>');
+<% if( @latitude == 0 && @longitude == 0 ) %>
+	$('#sidebar').html('<%= escape_javascript render("empty") %>');
+<% else %>
+	$('#sidebar').html('<%= escape_javascript render(@tweets) %>');
+<% end %>
 $('#paginator').html('<%= escape_javascript(paginate(@tweets, :remote => true).to_s) %>');
 $('#map').html('<%= escape_javascript render("map") %>');

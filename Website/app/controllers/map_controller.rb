@@ -4,7 +4,7 @@ class MapController < ApplicationController
     
     
     @q = Tweet.order('id_tweet DESC').where('latitude!=0 || longitude!=0').search(params[:q])
-    @tweets = @q.result(distinct: true).page(params[:page]).per(1)
+    @tweets = @q.result(distinct: true).page(params[:page]).per(5)
 
     
     @json = @tweets
@@ -62,7 +62,13 @@ class MapController < ApplicationController
       end      
     end
     
-    @latitude = @json.where("latitude != 0").first.latitude
-    @longitude = @json.where("longitude != 0").first.longitude
+    if(@json.where("latitude != 0").first != nil)   
+      @latitude = @json.where("latitude != 0").first.latitude
+      @longitude = @json.where("longitude != 0").first.longitude
+     else
+       @latitude = 0
+       @longitude = 0
+     end
+    
   end
 end

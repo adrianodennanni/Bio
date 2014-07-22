@@ -4,7 +4,11 @@
 	var mapOptions = {
 		center: new google.maps.LatLng(<%= @latitude %>, <%= @longitude %>),
 		
-		zoom: 14,
+		<% if (@latitude == 0 && @longitude == 0) %>
+			zoom : 3,
+		<% else %>
+			zoom: 14,
+		<% end %>
 		
 		panControlOptions: {
         	position: google.maps.ControlPosition.LEFT_CENTER

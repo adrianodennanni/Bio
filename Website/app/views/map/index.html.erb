@@ -3,45 +3,6 @@
 
 <html>
 	<head>
-		<!--FancyBox-->
-		<script>
-			$("#about").fancybox({
-			'width'         : '600px',
-			'height'        : '600px',
-			'autoScale'     : false,
-			'transitionIn'  : 'none',
-			'transitionOut' : 'none',
-			'type'          : 'iframe',
-			'enableEscapeButton' : true,
-			'fitToView' : true,
-						'autoSize' : false
-			});
-			
-			$("#statistics").fancybox({
-			'width'         : '400',
-			'height'        : '390',
-			'autoScale'     : false,
-			'transitionIn'  : 'none',
-			'transitionOut' : 'none',
-			'type'          : 'iframe',
-			'scrolling'     : 'no',
-			'enableEscapeButton' : true,
-			'fitToView' : true,
-						'autoSize' : false
-			});
-			
-			$("#photo").fancybox({
-				'width'         : '400px',
-				'height'        : '280px',
-				'autoScale'     : false,
-				'transitionIn'  : 'none',
-				'transitionOut' : 'none',
-				'type'          : 'iframe',
-				'enableEscapeButton' : true
-			});
-			   	
-			
-		</script>
 		<script language="JavaScript" type="text/javascript">
 			$(document).ready(function(){
 				$("#box_header_m").hide();
@@ -74,18 +35,17 @@
 			</div>
 			<div id="content">
 				<div id="sidebar">
-  				  		<%= render @tweets %>			
-				<br/>
+  				  	<%= render @tweets , :remote => true %> 				  					
+					<br/>
 				</div>
 				<div id="searchbox">
 					<div class="styled-select">
-						<%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>
-							
-								<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
-								<button type="submit" class="btnSrc" >
-									<i class="fa fa-search"></i>
-								</button>
-							<% end %>				
+						<%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>	
+							<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
+							<button type="submit" class="btnSrc" >
+								<i class="fa fa-search"></i>
+							</button>
+						<% end %>				
 					</div>
 				</div>
 				<div id="paginator">				
