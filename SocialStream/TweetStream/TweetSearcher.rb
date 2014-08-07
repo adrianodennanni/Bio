@@ -59,15 +59,26 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   down_votes=0
   reports=0
   
+
   # Saving User
   # If the user already exists update the data
   if (connection.query("SELECT id_user FROM User WHERE id_user='#{id_user}'").count==0)
     # Saving the user data
-    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, \
-    num_followers, num_following, num_tweets, profile_created_at, location, website, up_votes, down_votes) VALUES('#{id_user}', \
-    '#{username}', '#{name}', '#{profile_image}', '#{profile_bio}', \
-    '#{num_followers}', '#{num_following}', '#{num_tweets}', \
-    '#{profile_created_at}', '#{location}', '#{website}', '#{up_votes}', '#{down_votes}')")
+    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, num_followers, num_following, num_tweets, profile_created_at, location, website, up_votes, down_votes, reports) VALUES( \
+    '#{id_user}', \
+    '#{username}', \
+    '#{name}', \
+    '#{profile_image}', \
+    '#{profile_bio}', \
+    '#{num_followers}', \
+    '#{num_following}', \
+    '#{num_tweets}', \
+    '#{profile_created_at}', \
+    '#{location}', \
+    '#{website}', \
+    '#{up_votes}', \
+    '#{down_votes}, \
+    '#{reports}')");
   else
   # Updating the user data
     connection.query("UPDATE `bio`.`User` SET `username`='#{username}', `name`='#{name}', \
@@ -83,11 +94,13 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   
   
 
+
   # Variables that need to be initialized and can't be null
   img_url = ""
   latitude = 0
   longitude = 0
   urls = ""
+  hashtag = "#"+status.hashtags[0].text
 
   if (status.media[0]!=nil)
     img_url = status.media[0].media_url
@@ -114,21 +127,23 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   end
 
   # Saving tweet
-  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, urls, id_user, up_votes, down_votes) VALUES( \
+  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, hashtag ,urls, id_user, up_votes, down_votes, reports) VALUES( \
   '#{id_tweet}', \
   '#{text}', \
   '#{img_url}', \
   NOW(), \
   '#{latitude}', \
   '#{longitude}', \
+  '#{hashtag}', \
   '#{urls}', \
   '#{id_user}', \
   '#{up_votes}', \
-  '#{down_votes}')");
+  '#{down_votes}', \
+  '#{reports}')");
   
   ### Printing Data ###
   logger.info "### USER ###"
-  logger.info "ID User: #{id_user}"
+  logger.info  "ID User: #{id_user}"
   logger.info "Username: #{username}"
   logger.info "Name: #{name}"
   logger.info "Profile Image: #{profile_image}"

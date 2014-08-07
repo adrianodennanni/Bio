@@ -1,5 +1,7 @@
 Rails4::Application.routes.draw do
   
+  resources :locations
+
   get "map/tweets"
 
   get "map/about"

@@ -1,0 +1,16 @@
+<script>
+  var Chartkick = {"language": "pt"};
+</script>
+
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<% @geolocated = Tweet.where("longitude != 0").where("latitude != 0") %>
+<html>
+	<body>
+		<title1>Uso de hashtags</title1>
+		<h1><%= pie_chart @geolocated.group(:hashtag).count %></h1>
+		<title1>Geral</title1>
+		<p><b>Quantidade tweets:</b> <%= Tweet.all.count %></p>
+		<p><b>Quantidade tweets geolocalizados:</b> <%= @geolocated.count %></p>
+		<p><b>Último Tweet Postado Em:</b> <%= Tweet.all.last.date_tweet.strftime('%d/%m/%Y às %Hh%M') %></p>
+	</body>
+</html>

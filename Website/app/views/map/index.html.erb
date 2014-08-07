@@ -32,6 +32,12 @@
 				<div id="rtr_left_div">
 					<i class="fa fa-angle-double-right fa-2x"></i>
 				</div>
+				<div id="tabs">
+					<ul class="nav nav-pills nav-justified">
+					  <li class="active" ><a href="#">Postagens</a></li>
+					  <li><a href="#">Filtros</a></li>
+					</ul>
+				</div>
 			</div>
 			<div id="content">
 				<div id="sidebar">
@@ -54,24 +60,81 @@
 			</div>
 		</div>
 		
-		<div id="footer">
-			<a id="about" class="fancybox.iframe" rel="group" href="sobre" title="Sobre">
-				<title2>Sobre</title2>
-			</a>
-			<a id="statistics" class="fancybox.iframe" rel="group" href="estatisticas" title="Estatísticas">
-				<title2>Estatísticas</title2>
-			</a>
-		</div>
 		<div id="logotipo">
-			<a href="/">
 			<img src="logotipo.png" width="165" height="80"/>
-			</a>
 		</div>
 		
 		
 		<!-- MAP -->
-		<%= render "map" %>	
-
+		<%= render "map" %>
+		
+		<!-- Button trigger modal -->
+		<div id="info_btn">
+			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#info">
+			  Informações
+			</button>
+			<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#subtitles">
+			  Legendas
+			</button>
+			<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#statistics">
+			  Estatísticas
+			</button>
+		</div>
+		
+		<!-- Info modal -->
+		<div class="modal fade" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Informações</h4>
+		      </div>
+		      <div class="modal-body">
+		        <%= render "about" %>	
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<!-- Subtitles modal -->
+		<div class="modal fade" id="subtitles" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Legendas</h4>
+		      </div>
+		      <div class="modal-body">
+		        <%= render "subtitles" %>	
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<!-- Statistics modal -->
+		<div class="modal fade" id="statistics" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Legendas</h4>
+		      </div>
+		      <div class="modal-body">
+		        <%= render "statistics" %>	
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
 		
 	</body>
 </html>
