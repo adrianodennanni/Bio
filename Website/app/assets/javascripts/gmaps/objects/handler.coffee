@@ -11,6 +11,7 @@ class @Gmaps.Objects.Handler
   constructor: (@type, options = {})->
     @setPrimitives options
     @setOptions options
+    @_cacheAllBuilders()
     @resetBounds()
 
   buildMap: (options, onMapLoad = ->)->
@@ -104,6 +105,10 @@ class @Gmaps.Objects.Handler
     resource.setMap(@getMap())
     resource
 
+  _cacheAllBuilders: ->
+    that = @
+    _.each ['Bound', 'Circle',  'Clusterer', 'Kml', 'Map', 'Marker', 'Polygon', 'Polyline'], (kind)-> that._builder(kind)
+
   _clusterize: ->
     _.isObject @marker_options.clusterer
 
@@ -111,9 +116,9 @@ class @Gmaps.Objects.Handler
     @clusterer = @_builder('Clusterer').build({ map: @getMap() }, @marker_options.clusterer )
 
   _default_marker_options: ->
-    {
+    _.clone {
       singleInfowindow:  true
-      maxRandomDistance: 100
+      maxRandomDistance: 0
       clusterer:
         maxZoom:  5
         gridSize: 50
@@ -125,7 +130,7 @@ class @Gmaps.Objects.Handler
     @["__builder#{name}"]
 
   _default_models: ->
-    models = @_rootModule().Objects
+    models = _.clone(@_rootModule().Objects)
     if @_clusterize()
       models
     else
@@ -136,7 +141,7 @@ class @Gmaps.Objects.Handler
     string.charAt(0).toUpperCase() + string.slice(1)
 
   _default_builders: ->
-    @_rootModule().Builders
+    _.clone @_rootModule().Builders
 
   _rootModule: ->
     @__rootModule ?= Gmaps[@type]
