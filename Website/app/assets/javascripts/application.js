@@ -17,5 +17,6 @@
 //= require bootstrap-modalmanager
 //= require underscore
 //= require gmaps/google
+//= require chartkick
 //= require jquery.infinitescroll
 //= require_tree .

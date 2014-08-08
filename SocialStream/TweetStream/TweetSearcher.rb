@@ -8,7 +8,9 @@ require "time"
 require "yaml"
 require "mysql2"
 require 'rubygems'
+require 'openssl'
 require 'chatterbot/dsl'
+require 'geokit'
 
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
@@ -64,21 +66,7 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   # If the user already exists update the data
   if (connection.query("SELECT id_user FROM User WHERE id_user='#{id_user}'").count==0)
     # Saving the user data
-    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, num_followers, num_following, num_tweets, profile_created_at, location, website, up_votes, down_votes, reports) VALUES( \
-    '#{id_user}', \
-    '#{username}', \
-    '#{name}', \
-    '#{profile_image}', \
-    '#{profile_bio}', \
-    '#{num_followers}', \
-    '#{num_following}', \
-    '#{num_tweets}', \
-    '#{profile_created_at}', \
-    '#{location}', \
-    '#{website}', \
-    '#{up_votes}', \
-    '#{down_votes}, \
-    '#{reports}')");
+    connection.query("INSERT INTO User(id_user, username, name, profile_image, profile_bio, num_followers, num_following, num_tweets, profile_created_at, location, website, up_votes, down_votes, reports) VALUES( '#{id_user}','#{username}','#{name}', '#{profile_image}','#{profile_bio}', '#{num_followers}', '#{num_following}','#{num_tweets}','#{profile_created_at}','#{location}','#{website}','#{up_votes}','#{down_votes}','#{reports}')")
   else
   # Updating the user data
     connection.query("UPDATE `bio`.`User` SET `username`='#{username}', `name`='#{name}', \
@@ -109,11 +97,31 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   end
   
   if status.geo!=nil
-  latitude = status.geo.coordinates[0]
-  longitude = status.geo.coordinates[1]
+    latitude = status.geo.coordinates[0]
+    longitude = status.geo.coordinates[1]
+    latlng= Geokit::LatLng.new(latitude,longitude)
+    address=Geokit::Geocoders::GoogleGeocoder.reverse_geocode latlng
+    if address.full_address!=nil
+      full_address=address.full_address
+    else
+      full_address=""
+    end
+    
+    if address.city!=nil
+      city=address.city
+    else
+      city=""
+    end
+    
+    if address.country!=nil
+      country=address.country
+    else
+      country=""
+    end
+    
   else
-  date_now = Time.now.strftime('%I:%M:%S de %d/%m/%y')
-  reply %Q|#{tweet_user(status)} Seu Tweet enviado às #{date_now} não foi geolocalizado. Poste o tweet novamente com a opção "localização" ativada|, status
+    date_now = Time.now.strftime('%I:%M:%S de %d/%m/%y')
+    reply %Q|#{tweet_user(status)} Seu Tweet enviado às #{date_now} não foi geolocalizado. Poste o tweet novamente com a opção "localização" ativada|, status
   end
 
   i=0
@@ -127,40 +135,21 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
   end
 
   # Saving tweet
-  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, hashtag ,urls, id_user, up_votes, down_votes, reports) VALUES( \
+  connection.query("INSERT INTO Tweet(id_tweet, text, img_url, date_tweet, latitude, longitude, full_address, city, country, hashtag ,urls, id_user, up_votes, down_votes, reports) VALUES( \
   '#{id_tweet}', \
   '#{text}', \
   '#{img_url}', \
   NOW(), \
   '#{latitude}', \
   '#{longitude}', \
+  '#{full_address}', \
+  '#{city}', \
+  '#{country}', \      
   '#{hashtag}', \
   '#{urls}', \
   '#{id_user}', \
   '#{up_votes}', \
   '#{down_votes}', \
   '#{reports}')");
-  
-  ### Printing Data ###
-  logger.info "### USER ###"
-  logger.info  "ID User: #{id_user}"
-  logger.info "Username: #{username}"
-  logger.info "Name: #{name}"
-  logger.info "Profile Image: #{profile_image}"
-  logger.info "Profile Bio: #{profile_bio}"
-  logger.info "Num Followers: #{num_followers}"
-  logger.info "Num Following: #{num_following}"
-  logger.info "Num Tweets: #{num_tweets}"
-  logger.info "Date Profile Created: #{profile_created_at}"
-  logger.info "Location: #{location}"
-  logger.info "Website: #{website}"
-  logger.info "### TWEET ###"
-  logger.info "ID Tweet: #{id_tweet}"
-  logger.info "Text: #{text}"
-  logger.info "Image URL: #{img_url}"
-  logger.info "Latitude: #{latitude}"
-  logger.info "Longitude: #{longitude}"
-  logger.info "Urls: #{urls}"
-  logger.info "\n \n"
   
 end
