@@ -1,5 +1,6 @@
 Rails4::Application.routes.draw do
   
+  devise_for :webusers
   resources :locations
 
   get "map/tweets"
