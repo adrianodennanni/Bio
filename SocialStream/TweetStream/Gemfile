@@ -2,5 +2,5 @@ source 'https://rubygems.org'
 
 gem "tweetstream"
 gem "mysql2"
-gem 'chatterbot/dsl'
+gem 'chatterbot'
 gem 'geokit'
