@@ -1,5 +1,5 @@
 					<!-- It will show only the geolocalizated tweets!! -->
-							<% user = User.find_by_id_user(tweet.id_user) %>
+							<% user = User.find_by(tweet.user_id) %>
 								<div id="image"><a target="_blank" href="https://twitter.com/<%= user.username %>"><img src="<%= user.profile_image %>" /></a></div>
 								<div id="name">
 									<h1><%= user.name %></h1>

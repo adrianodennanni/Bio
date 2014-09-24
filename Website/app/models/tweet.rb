@@ -1,4 +1,3 @@
 class Tweet < ActiveRecord::Base
-  self.table_name = 'Tweet'
-
+  belongs_to :user
 end
