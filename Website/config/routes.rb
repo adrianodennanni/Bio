@@ -1,12 +1,9 @@
 Rails4::Application.routes.draw do
 
+  devise_for :webusers
   resources :locations
 
-  get "map/tweets"
 
-  get "map/about"
-
-  get "map/statistics"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -69,4 +66,6 @@ Rails4::Application.routes.draw do
   match '/estatisticas' => 'map#statistics', via: [:get, :post]
   resources :tweet
   match '/tweets' => 'map#index', via: [:get, :post]
+
+
 end

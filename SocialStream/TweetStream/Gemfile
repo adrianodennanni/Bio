@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
 gem "tweetstream"
-gem "mysql2"
-gem 'chatterbot'
+gem 'twitter'
 gem 'geokit'
+gem 'oj'
