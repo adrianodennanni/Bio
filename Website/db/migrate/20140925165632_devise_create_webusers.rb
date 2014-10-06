@@ -1,5 +1,6 @@
 class DeviseCreateWebusers < ActiveRecord::Migration
   def change
+
     create_table(:webusers) do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""

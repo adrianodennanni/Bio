@@ -17,6 +17,7 @@ class CreateTweets < ActiveRecord::Migration
       t.integer :up_votes
       t.integer :down_votes
       t.integer :reports
+
     end
   end
 end
