@@ -7439,3 +7439,99 @@ Started GET "/assets/tweet.js?body=1" for 127.0.0.1 at 2014-10-05 21:49:32 -0300
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-05 21:49:32 -0300
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `num_tweets` = 1367 WHERE `users`.`id` = 88300988
+  [1m[36m (55.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`city`, `country`, `date_tweet`, `down_votes`, `full_address`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('São Paulo', 'Brazil', '2014-10-05 22:30:06', 0, 'Rua Oliveira Alves, 559-679 - Ipiranga, São Paulo - São Paulo, 04210-061, Brazil', '#biobr', 518936196157038593, '', -23.585339, -46.602994, 0, '#biobr dsss', 0, '', 88300988)[0m
+  [1m[35m (50.3ms)[0m  COMMIT
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `num_tweets` = 1368 WHERE `users`.`id` = 88300988
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (52.5ms)[0m  [1mCOMMIT[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`city`, `country`, `date_tweet`, `down_votes`, `full_address`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('São Paulo', 'Brazil', '2014-10-05 22:32:51', 0, 'Rua Oliveira Alves, 559-679 - Ipiranga, São Paulo - São Paulo, 04210-061, Brazil', '#biousp', 518936891715252224, '', -23.585319, -46.602975, 0, '#biousp sjsjjejwn', 0, '', 88300988)[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (59.2ms)[0m  COMMIT
+  [1m[35mSQL (47.3ms)[0m  INSERT INTO `tweets` (`city`, `country`, `date_tweet`, `down_votes`, `full_address`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('São Paulo', 'Brazil', '2014-10-05 22:32:51', 0, 'Rua Oliveira Alves, 559-679 - Ipiranga, São Paulo - São Paulo, 04210-061, Brazil', '#biousp', 518936891715252224, '', -23.585319, -46.602975, 0, '#biousp sjsjjejwn', 0, '', 88300988)
+Mysql2::Error: Duplicate entry '518936891715252224' for key 'PRIMARY': INSERT INTO `tweets` (`city`, `country`, `date_tweet`, `down_votes`, `full_address`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('São Paulo', 'Brazil', '2014-10-05 22:32:51', 0, 'Rua Oliveira Alves, 559-679 - Ipiranga, São Paulo - São Paulo, 04210-061, Brazil', '#biousp', 518936891715252224, '', -23.585319, -46.602975, 0, '#biousp sjsjjejwn', 0, '', 88300988)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (14.0ms)[0m  UPDATE `users` SET `num_tweets` = 1367 WHERE `users`.`id` = 88300988
+  [1m[36m (72.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:05:25', 0, '#biobr', 518945083979489280, '', 0.0, 0.0, 0, '#biobr auuiawfawif', 0, '', 88300988)[0m
+  [1m[35m (90.1ms)[0m  COMMIT
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `num_tweets` = 1368 WHERE `users`.`id` = 88300988
+  [1m[36m (75.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:05:58', 0, '#biobr', 518945224631283712, '', 0.0, 0.0, 0, 'DRFARF AWR #biobr', 0, '', 88300988)[0m
+  [1m[35m (43.2ms)[0m  COMMIT
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `num_tweets` = 1361 WHERE `users`.`id` = 88300988
+  [1m[36m (149.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:15:23', 0, '#biobr', 518947586175410176, '', 0.0, 0.0, 0, 'Oi #biobr', 0, '', 88300988)[0m
+  [1m[35m (69.2ms)[0m  COMMIT
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `num_tweets` = 1362 WHERE `users`.`id` = 88300988
+  [1m[36m (36.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:15:57', 0, '#biobr', 518947736457314305, '', 0.0, 0.0, 0, 'AA #biobr', 0, '', 88300988)[0m
+  [1m[35m (41.3ms)[0m  COMMIT
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `num_tweets` = 1363 WHERE `users`.`id` = 88300988
+  [1m[36m (60.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:17:16', 0, '#biousp', 518948068000284673, '', 0.0, 0.0, 0, 'aaa #biousp', 0, '', 88300988)[0m
+  [1m[35m (43.1ms)[0m  COMMIT
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (2.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `num_tweets` = 1364 WHERE `users`.`id` = 88300988
+  [1m[36m (35.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:19:33', 0, '#biobr', 518948642695417856, '', 0.0, 0.0, 0, 'fsfsff #biobr', 0, '', 88300988)[0m
+  [1m[35m (41.9ms)[0m  COMMIT
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `num_tweets` = 1366 WHERE `users`.`id` = 88300988
+  [1m[36m (54.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:20:38', 0, '#biobr', 518948914972864513, '', 0.0, 0.0, 0, 'aaaa #biobr', 0, '', 88300988)[0m
+  [1m[35m (43.7ms)[0m  COMMIT
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  UPDATE `users` SET `num_tweets` = 1367 WHERE `users`.`id` = 88300988
+  [1m[36m (60.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:21:01', 0, '#biousp', 518949011987132416, '', 0.0, 0.0, 0, 'asdasdasd #biousp', 0, '', 88300988)[0m
+  [1m[35m (47.2ms)[0m  COMMIT
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 88300988 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `num_tweets` = 1368 WHERE `users`.`id` = 88300988
+  [1m[36m (51.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `tweets` (`date_tweet`, `down_votes`, `hashtag`, `id`, `img_url`, `latitude`, `longitude`, `reports`, `text`, `up_votes`, `urls`, `user_id`) VALUES ('2014-10-05 23:24:10', 0, '#biobr', 518949805692030978, '', 0.0, 0.0, 0, 'fdffa #biobr asas', 0, '', 88300988)[0m
+  [1m[35m (54.6ms)[0m  COMMIT

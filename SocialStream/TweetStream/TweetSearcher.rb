@@ -45,7 +45,16 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = APP_CONFIG['OAUTH_TOKEN_SECRET_TWITTER']
 end
 
-puts 'Starting'
+case ARGV[0]
+when "-start"
+  puts "TweetSearcher started."
+  Process.daemon
+when "-stop"
+  Process.kill(9,Process.pid)
+else
+  puts "Lacks arguments. Use -start/-stop"
+
+end
 
 TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
 
@@ -61,7 +70,6 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
       user_query.location = status.user.location
       user_query.website = status.user.url.to_s
     user_query.save
-    puts "Updated user #{status.user.id}"
   else
     user_query = User.new
       user_query.id = status.user.id
@@ -79,7 +87,6 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
       user_query.down_votes=0
       user_query.reports=0
     user_query.save
-    puts "Created user #{status.user.id}"
   end
 
 
@@ -166,6 +173,5 @@ TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |st
     tweet_query.down_votes=0
     tweet_query.reports=0
   tweet_query.save
-  puts "Created tweet #{id_tweet}"
 
 end
