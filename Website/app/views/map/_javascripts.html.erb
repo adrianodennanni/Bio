@@ -1,0 +1,44 @@
+<script language="JavaScript" type="text/javascript">
+    $(document).ready(function(){
+        $("#box_header_m").hide();
+
+        $("#rtr_left_div").click(function(){
+            $("#side_panel").toggle("slide");
+            $("#box_header_m").toggle("slide");
+        });
+
+        $("#box_header_m").click(function(){
+            $("#side_panel").toggle("slide");
+            $("#box_header_m").toggle("slide");
+        });
+
+
+        $("#posts_tab").addClass("active");
+
+        $("#filters").hide();
+
+        $("#posts_tab").click(function(){
+            $(this).addClass("active");
+            $("#filters_tab").removeClass("active");
+            $("#filters").hide();
+            $("#content").show();
+        });
+
+        $("#filters_tab").click(function(){
+            $(this).addClass("active");
+            $("#posts_tab").removeClass("active");
+            $("#content").hide();
+            $("#filters").show();
+        });
+
+
+        $(function(){
+            $('#limit').change(
+                    function() {
+                        $('#limit_form').submit();
+                    });
+        });
+
+
+    });
+</script>

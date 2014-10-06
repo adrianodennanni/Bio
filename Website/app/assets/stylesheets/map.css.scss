@@ -100,6 +100,22 @@ a {
     border-color:#444
 }
 
+#filters {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  bottom: 30px;
+  width: 305px;
+  background: rgb(255,255,255); /* old IE */
+  background: rgba(245,255,245,.9);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 2;
+  text-align: center;
+  border:1px solid;
+  border-color:#444
+}
+
 #sidebar{
   position: absolute;
   right: 3px;
@@ -244,7 +260,12 @@ input[type=text]
     position: absolute;
     left: 40px;
     right: 0px;
+    cursor: pointer;
 
+}
+
+body .full{
+  height: 96%;
 }
 
 #map

@@ -67,5 +67,4 @@ Rails4::Application.routes.draw do
   resources :tweet
   match '/tweets' => 'map#index', via: [:get, :post]
 
-
 end

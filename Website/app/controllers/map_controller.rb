@@ -1,10 +1,15 @@
 class MapController < ApplicationController
 
   def index
-    
-    
+
     @q = Tweet.order('id DESC').where('latitude!=0 || longitude!=0').search(params[:q])
-    @tweets = @q.result(distinct: true).page(params[:page]).per(5)
+    if params[:limit]
+      @tweets = @q.result(distinct: true).page(params[:page]).per(params[:limit])
+    else
+      @tweets = @q.result(distinct: true).page(params[:page])
+    end
+
+
 
     
     @json = @tweets

@@ -3,22 +3,7 @@
 
 <html>
 	<head>
-		<script language="JavaScript" type="text/javascript">
-			$(document).ready(function(){
-				$("#box_header_m").hide();
-				
-			$("#rtr_left_div").click(function(){
-						 $("#side_panel").toggle("slide");
-						 $("#box_header_m").toggle("slide");
-				});
-				
-				$("#box_header_m").click(function(){
-						 $("#side_panel").toggle("slide");
-						 $("#box_header_m").toggle("slide");
-				});
-			});
-				
-		</script>
+        <%= render('map/javascripts') %>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	</head>
 	<body>
@@ -34,8 +19,8 @@
 				</div>
 				<div id="tabs">
 					<ul class="nav nav-pills nav-justified">
-					  <li class="active" ><a href="#">Postagens</a></li>
-					  <li><a href="#">Filtros</a></li>
+					  <li id="posts_tab"><a>Postagens</a></li>
+					  <li id="filters_tab"><a>Filtros</a></li>
 					</ul>
 				</div>
 			</div>
@@ -46,18 +31,36 @@
 				</div>
 				<div id="searchbox">
 					<div class="styled-select">
-						<%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>	
+						<%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>
 							<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
 							<button type="submit" class="btnSrc" >
 								<i class="fa fa-search"></i>
 							</button>
-						<% end %>				
+						<% end %>
 					</div>
 				</div>
 				<div id="paginator">				
 					<%= paginate @tweets , :remote => true %>					
 				</div>
 			</div>
+            <div id="filters">
+              <div id="sidebar">
+                <%= render partial: 'filter' %>
+                <br/>
+              </div>
+              <div id="searchbox">
+                <div class="styled-select">
+                  <%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>
+                      <%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
+                      <button type="submit" class="btnSrc" >
+                        <i class="fa fa-search"></i>
+                      </button>
+                  <% end %>
+                </div>
+              </div>
+              <div id="paginator">
+              </div>
+            </div>
 		</div>
 		
 		<div id="logotipo">
@@ -118,7 +121,7 @@
 		</div>
 		
 		<!-- Statistics modal -->
-		<div class="modal fade" id="statistics" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal fade full" id="statistics" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" heigth="90" >
 		  <div class="modal-dialog">
 		    <div class="modal-content">
 		      <div class="modal-header">
