@@ -1,0 +1,33 @@
+# Configuration File
+# Created by J. H. Kersul and Adriano Dennanni
+
+##### Database #####
+LOGIN_MYSQL: 'bio'
+PASSWORD_MYSQL: 'poli'
+DATABASE_MYSQL: 'bio'
+HOST_MYSQL: 'localhost'
+
+##### Database Tables #####
+# Table User
+USER_TABLE_CREATE: 'id_user BIGINT NOT NULL, username VARCHAR(30) NOT NULL, name VARCHAR(50) NOT NULL, profile_image VARCHAR(200), profile_bio VARCHAR(300), num_followers INT, num_following INT, num_tweets INT, profile_created_at VARCHAR(100), location VARCHAR(200), website VARCHAR(500), up_votes INT, down_votes INT, reports INT'
+PK_USER_TABLE: 'id_user' # Primary Key row
+
+# Table Tweet
+TWEET_TABLE_CREATE: 'id_tweet BIGINT NOT NULL, text VARCHAR(300), img_url VARCHAR(300), date_tweet DATETIME NOT NULL, latitude FLOAT, longitude FLOAT, full_address VARCHAR(300), city VARCHAR(50), country VARCHAR(30), hashtag VARCHAR(15), urls VARCHAR(200), id_user BIGINT NOT NULL, up_votes INT, down_votes INT, reports INT'
+PK_TWEET_TABLE: 'id_tweet'
+FK_TWEET_TABLE: 'id_user' #Set the foreign key of this table that will reference the Primary Key of User Table
+
+##### Tweet Stream #####
+# Access Keys
+CONSUMER_KEY_TWITTER: 'hAAlsKzERB3uBiom8eu2Xg'
+CONSUMER_SECRET_TWITTER: 'BdAJehfFiG6TRZl6x1ogfFpFrDHfXQPyeiN6ZkbaRwQ'
+OAUTH_TOKEN_TWITTER: '159603825-hWKnTOks4ncI6xvH3tpfmoytxEQRD0SxHYoyTtir'
+OUATH_TOKEN_SECRET_TWITTER: 'PL2EkvBYuUlLrm3GJDWechL2oZRRlptR7i4zeVNKM'
+# Terms for filtering
+TERM_1_TWITTER: '#FaunaUSP'
+TERM_2_TWITTER: '#FloraUSP'
+TERM_3_TWITTER: '#BioUSP'
+TERM_4_TWITTER: '#FaunaBR'
+TERM_5_TWITTER: '#FloraBR'
+TERM_6_TWITTER: '#BioBR'
+TERM_7_TWITTER: '#WorldBio'
