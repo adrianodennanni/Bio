@@ -1,4 +1,4 @@
-<div>Mostrar
+<div id="page_number">Mostrar
   <%= form_tag root_path, method: :get, id: 'limit_form', remote: true do %>
       <%= select_tag :limit, options_for_select([1, 5, 10, 15, 20],selected: params[:limit] || 5) %>
   <% end %>

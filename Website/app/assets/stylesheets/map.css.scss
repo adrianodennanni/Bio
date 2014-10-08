@@ -84,7 +84,7 @@ a {
   left: 10px;
 }
 
-#content {
+#content, #filters  {
     position: absolute;
     top: 60px;
     right: 0px;
@@ -100,21 +100,6 @@ a {
     border-color:#444
 }
 
-#filters {
-  position: absolute;
-  top: 60px;
-  right: 0px;
-  bottom: 30px;
-  width: 305px;
-  background: rgb(255,255,255); /* old IE */
-  background: rgba(245,255,245,.9);
-  overflow-x: hidden;
-  overflow-y: hidden;
-  z-index: 2;
-  text-align: center;
-  border:1px solid;
-  border-color:#444
-}
 
 #sidebar{
   position: absolute;
@@ -203,10 +188,20 @@ a {
 
 #searchbox{
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 5px;
+    top: 60px;
     height: 30px;
-    width: 100%;
+    right: 0px;
+    z-index: 3;
+
+}
+
+#page_number{
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 10px;
+  height: 30px;
 }
 
 input[type=text]

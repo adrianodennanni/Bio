@@ -45,18 +45,8 @@ client = Twitter::REST::Client.new do |config|
   config.access_token_secret = APP_CONFIG['OAUTH_TOKEN_SECRET_TWITTER']
 end
 
-case ARGV[0]
-when "-start"
-  puts "TweetSearcher started."
-  Process.daemon
-when "-stop"
-  Process.kill(9,Process.pid)
-else
-  puts "Lacks arguments. Use -start/-stop"
 
-end
-
-TweetStream::Client.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
+TweetStream::Daemon.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
 
 
   if User.exists?(:id => status.user.id)

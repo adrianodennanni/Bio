@@ -24,30 +24,6 @@
 					</ul>
 				</div>
 			</div>
-			<div id="content">
-				<div id="sidebar">
-  				  	<%= render @tweets , :remote => true %> 				  					
-					<br/>
-				</div>
-				<div id="searchbox">
-					<div class="styled-select">
-						<%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>
-							<%= f.text_field :text_cont, :placeholder => "Filtrar..." %>
-							<button type="submit" class="btnSrc" >
-								<i class="fa fa-search"></i>
-							</button>
-						<% end %>
-					</div>
-				</div>
-				<div id="paginator">				
-					<%= paginate @tweets , :remote => true %>					
-				</div>
-			</div>
-            <div id="filters">
-              <div id="sidebar">
-                <%= render partial: 'filter' %>
-                <br/>
-              </div>
               <div id="searchbox">
                 <div class="styled-select">
                   <%= search_form_for @q, :remote=>"true" , :method => :get do |f| %>
@@ -57,6 +33,21 @@
                       </button>
                   <% end %>
                 </div>
+              </div>
+			<div id="content">
+				<div id="sidebar">
+  				  	<%= render @tweets , :remote => true %> 				  					
+					<br/>
+				</div>
+
+				<div id="paginator">				
+					<%= paginate @tweets , :remote => true %>					
+				</div>
+			</div>
+            <div id="filters">
+              <div id="sidebar">
+                <%= render partial: 'filter' %>
+                <br/>
               </div>
               <div id="paginator">
               </div>
