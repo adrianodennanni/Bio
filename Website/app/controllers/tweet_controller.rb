@@ -2,7 +2,7 @@ class TweetController < ApplicationController
   
   def index
     @twit = Tweet.find(params[:id_tweet])
-    @user = User.find(@twit.id_user)
+    @user = User.find(@twit.user_id)
     if (params[:vote]=='up')
       increaseVoteUp
       # If dislike was selected and the session exist

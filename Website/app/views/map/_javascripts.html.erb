@@ -1,5 +1,6 @@
 <script language="JavaScript" type="text/javascript">
     $(document).ready(function(){
+
         $("#box_header_m").hide();
 
         $("#rtr_left_div").click(function(){
@@ -29,15 +30,21 @@
             $("#posts_tab").removeClass("active");
             $("#content").hide();
             $("#filters").show();
+            markers = handler.addMarkers(<%=raw @marca_filtro.to_json %>);
+
         });
 
 
         $(function(){
             $('#limit').change(
-                    function() {
-                        $('#limit_form').submit();
-                    });
-        });
+                function() {
+                     $('#limit_form').submit();
+                });
+            }
+        );
+
+
+
 
 
     });

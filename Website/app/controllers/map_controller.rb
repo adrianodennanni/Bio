@@ -11,9 +11,17 @@ class MapController < ApplicationController
 
 
 
-    
+
+    @movel = Tweet.last
+
+    @marca_filtro= Gmaps4rails.build_markers(@movel) do |movel, marker|
+      marker.lat  -23.55
+      marker.lng  -46.74
+    end
+
+
     @json = @tweets
-            
+
     @hash = Gmaps4rails.build_markers(@json) do |json, marker|
       # marker recebe alguns parametros para cada marcador
       user=User.find(json.user_id)

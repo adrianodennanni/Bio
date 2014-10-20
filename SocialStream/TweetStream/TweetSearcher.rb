@@ -12,6 +12,7 @@ require 'rubygems'
 require 'geokit'
 require '../../Website/config/environment'
 
+
 #Set the location of the config file
 APP_CONFIG = YAML.load_file("../config.yml")
 
@@ -46,9 +47,13 @@ client = Twitter::REST::Client.new do |config|
 end
 
 
-TweetStream::Daemon.new.track(term1,term2,term3,term4,term5,term6, term7) do |status|
+process=TweetStream::Daemon.new
 
+process.on_error do |message|
+  process.restart
+end
 
+process.track(term1,term2,term3,term4,term5,term6, term7) do |status|
   if User.exists?(:id => status.user.id)
     user_query = User.find(status.user.id)
       user_query.name = status.user.name
